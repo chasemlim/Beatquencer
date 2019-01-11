@@ -1,22 +1,22 @@
-export class Pad {
+export default class Pad {
 
     // Pass in Audio Context from board
     constructor(soundType, audioCtx) {
         this.soundType = soundType;
         this.audioCtx = audioCtx;
-        this.audioBuffer = nil;
+        this.audioBuffer;
         this.sound = '';
         this.volume = 0;
 
-        this.addEventListener('click', () => {
-            if (this.getAttribute('aria-checked') === false) {
-                this.setAttribute('aria-checked', 'true');
-            } else {
-                this.setAttribute('aria-checked', 'false');
-            }
-        })
+        // this.addEventListener('click', () => {
+        //     if (this.getAttribute('aria-checked') === false) {
+        //         this.setAttribute('aria-checked', 'true');
+        //     } else {
+        //         this.setAttribute('aria-checked', 'false');
+        //     }
+        // })
 
-        setupSample()
+        this.setupSample()
             .then((sample) => {
 
                 // const playButton = document.querySelector('playpause');
@@ -49,7 +49,7 @@ export class Pad {
 
     play(audioCtx, audioBuffer) {
         const sampleSource = audioCtx.createBufferSource();
-        sampleSource.buffer = audioBuffer;
+        sampleSource.buffer = audioBuffer; // AudioBuffer comes from this.audioBuffer
         sampleSource.connect(audioCtx.destination);
         sampleSource.start();
         return sampleSource;

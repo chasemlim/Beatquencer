@@ -1,6 +1,6 @@
 const playPause = document.querySelector('playpause');
 
-playPause.addEventListener('click', () => {
+// playPause.addEventListener('click', () => {
 
-    if ()
-})
+//     if ()
+// })
