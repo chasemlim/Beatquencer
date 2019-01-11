@@ -29,30 +29,7 @@ export default class Pad {
 
             })
 
-        this.sound.connect(audioCtx.destination);
-    }
-
-    async getFile(audioCtx, filepath) {
-        const res = await fetch(filepath);
-        const arrayBuffer = await Response.arrayBuffer();
-        const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
-        this.audioBuffer = audioBuffer;
-        return audioBuffer;
-    }
-
-    async setupSample() {
-        const filePath = determineSound();
-        const sample = await getFile(this.audioCtx, filePath);
-        return sample;
-    }
-
-
-    play(audioCtx, audioBuffer) {
-        const sampleSource = audioCtx.createBufferSource();
-        sampleSource.buffer = audioBuffer; // AudioBuffer comes from this.audioBuffer
-        sampleSource.connect(audioCtx.destination);
-        sampleSource.start();
-        return sampleSource;
+        // this.sound.connect(audioCtx.destination);
     }
 
     determineSound() {
@@ -76,7 +53,32 @@ export default class Pad {
             case 'sub':
 
             default:
-                return '../assets/audio/drums.wav';
+                return 'drums.wav';
         }
+    }
+
+    async getFile(audioCtx, filepath) {
+        const res = await fetch(filepath);
+        const arrayBuffer = await res.arrayBuffer();
+        const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+        this.audioBuffer = audioBuffer;
+        return audioBuffer;
+    }
+
+    async setupSample() {
+        const filePath = this.determineSound();
+        console.log(filePath);
+        
+        const sample = await this.getFile(this.audioCtx, filePath);
+        return sample;
+    }
+
+
+    play(audioCtx, audioBuffer) {
+        const sampleSource = audioCtx.createBufferSource();
+        sampleSource.buffer = audioBuffer; // AudioBuffer comes from this.audioBuffer
+        sampleSource.connect(audioCtx.destination);
+        sampleSource.start();
+        return sampleSource;
     }
 }

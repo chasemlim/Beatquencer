@@ -1,6 +1,11 @@
 const playPause = document.querySelector('playpause');
 
-// playPause.addEventListener('click', () => {
+playPause.addEventListener('click', () => {
 
-//     if ()
-// })
+    if (playPause.hasAttribute('data-playing')) {
+        console.log("YES");
+        
+    }
+})
+
+export default PlayButton;

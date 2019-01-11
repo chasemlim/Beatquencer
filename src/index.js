@@ -1,6 +1,4 @@
-// const board = require('./lib/board');
-
-
+// const board = require('./lib/board'); 
 
 import Pad from './lib/pad';
 
