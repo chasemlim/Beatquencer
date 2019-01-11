@@ -8,6 +8,6 @@ const pad = new Pad('', audioCtx);
 
 
 
-console.log(pad);
+// console.log(pad);
 
-pad.play(audioCtx, pad.audioBuffer);
+// pad.play(audioCtx, pad.audioBuffer);

@@ -59,15 +59,18 @@ export default class Pad {
 
     async getFile(audioCtx, filepath) {
         const res = await fetch(filepath);
+
         const arrayBuffer = await res.arrayBuffer();
         const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
         this.audioBuffer = audioBuffer;
+        console.log(audioBuffer);
+        
         return audioBuffer;
     }
 
     async setupSample() {
         const filePath = this.determineSound();
-        console.log(filePath);
+        console.log(filePath); // 
         
         const sample = await this.getFile(this.audioCtx, filePath);
         return sample;
