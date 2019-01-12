@@ -5,7 +5,6 @@ export default class Board {
 
     constructor(audioCtx) {
         this.audioCtx = audioCtx;
-        this.initializePlayButton();
     }
 
     // const pad = new Pad('', audioCtx);

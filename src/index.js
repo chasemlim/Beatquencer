@@ -7,15 +7,27 @@ window.addEventListener('DOMContentLoaded', () => {
     audioCtx.suspend(); // AudioContext resume once user presses a button
 
     const pad = new Pad('', audioCtx);
-    window.pad = pad;
 
     const board = new Board(audioCtx);
 
-    document.querySelector('button').addEventListener('click', function () {
-        audioCtx.resume().then(() => {
-            // console.log('Playback resumed successfully');
+    const playPause = document.querySelector('button');
+
+    playPause.addEventListener('click', function () {
+
+            if (playPause.getAttribute('data-playing') === 'false') {
+                console.log("YES");
+                
+                playPause.setAttribute('data-playing', true);
+                audioCtx.resume();
+            } else {
+                console.log(playPause.getAttribute('data-playing'));
+                
+                playPause.setAttribute('data-playing', false);
+                audioCtx.suspend();
+            }
+
             pad.play(audioCtx, pad.audioBuffer);
-        });
+
     }); 
     
     // pad.play(audioCtx, pad.audioBuffer);
