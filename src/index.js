@@ -1,26 +1,22 @@
-// const board = require('./lib/board'); 
-
+import Board from './lib/board';
 import Pad from './lib/pad';
 
-console.log("something");
-
-
 window.addEventListener('DOMContentLoaded', () => {
-    console.log("loaded");
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     const audioCtx = new AudioContext();
-    audioCtx.suspend();
-
-    document.querySelector('button').addEventListener('click', function () {
-        context.resume().then(() => {
-            console.log('Playback resumed successfully');
-        });
-    });
+    audioCtx.suspend(); // AudioContext resume once user presses a button
 
     const pad = new Pad('', audioCtx);
     window.pad = pad;
 
-    console.log(pad);
+    const board = new Board(audioCtx);
 
-    pad.play(audioCtx, pad.audioBuffer);
+    document.querySelector('button').addEventListener('click', function () {
+        audioCtx.resume().then(() => {
+            // console.log('Playback resumed successfully');
+            pad.play(audioCtx, pad.audioBuffer);
+        });
+    }); 
+    
+    // pad.play(audioCtx, pad.audioBuffer);
 })

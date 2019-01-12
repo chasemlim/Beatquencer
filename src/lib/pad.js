@@ -1,4 +1,4 @@
-export default class Pad {
+export default class Pad { 
 
     // Pass in Audio Context from board
     constructor(soundType, audioCtx) {
@@ -53,24 +53,21 @@ export default class Pad {
             case 'sub':
 
             default:
-                return 'drums.wav';
+                return '../src/assets/audio/drums.wav';
         }
     }
 
-    async getFile(audioCtx, filepath) {
+    async getFile(audioCtx, filepath) { // this works now
         const res = await fetch(filepath);
 
         const arrayBuffer = await res.arrayBuffer();
         const audioBuffer = await audioCtx.decodeAudioData(arrayBuffer);
-        this.audioBuffer = audioBuffer;
-        console.log(audioBuffer);
-        
+        this.audioBuffer = audioBuffer;    
         return audioBuffer;
     }
 
     async setupSample() {
         const filePath = this.determineSound();
-        console.log(filePath); // 
         
         const sample = await this.getFile(this.audioCtx, filePath);
         return sample;

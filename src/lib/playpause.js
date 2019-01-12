@@ -1,11 +1,16 @@
-const playPause = document.querySelector('playpause');
+export default class PlayButton {
 
-playPause.addEventListener('click', () => {
+    constructor(audioCtx) {
+        this.audioCtx = audioCtx;
+        // const playPause = document.querySelector('playpause');
 
-    if (playPause.hasAttribute('data-playing')) {
-        console.log("YES");
-        
+        // playPause.addEventListener('click', () => {
+
+        //     if (playPause.hasAttribute('data-playing')) {
+        //         console.log("YES");
+
+        //     }
+        // }) This might have to go in index.js
     }
-})
 
-export default PlayButton;
+}

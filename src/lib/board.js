@@ -1,10 +1,24 @@
 import Pad from './pad';
 import PlayButton from './playpause';
 
-const AudioContext = window.AudioContext || window.webkitAudioContext;
-const audioCtx = new AudioContext();
+export default class Board {
 
-const pad = new Pad('', audioCtx);
+    constructor(audioCtx) {
+        this.audioCtx = audioCtx;
+        this.initializePlayButton();
+    }
+
+    // const pad = new Pad('', audioCtx);
+
+    initializePlayButton() {
+        const playButton = new PlayButton(this.audioCtx);
+    }
+
+
+}
+
+// const AudioContext = window.AudioContext || window.webkitAudioContext;
+// const audioCtx = new AudioContext();
 
 
 
