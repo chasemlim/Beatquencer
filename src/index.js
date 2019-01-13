@@ -1,5 +1,6 @@
 import Board from './lib/board';
 import Pad from './lib/pad';
+import './assets/stylesheets/index.scss';
 
 window.addEventListener('DOMContentLoaded', () => {
     const AudioContext = window.AudioContext || window.webkitAudioContext;

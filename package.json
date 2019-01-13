@@ -10,9 +10,14 @@
   "keywords": [],
   "author": "Chase Lim",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "css-loader": "^2.1.0",
+    "style-loader": "^0.23.1"
+  },
   "dependencies": {
+    "node-sass": "^4.11.0",
     "sass": "^1.16.0",
+    "sass-loader": "^7.1.0",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1"
   },
