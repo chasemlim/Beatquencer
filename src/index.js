@@ -48,5 +48,43 @@ window.addEventListener('DOMContentLoaded', () => {
         pad.play();
     }
 
-    // pad.play(audioCtx, pad.audioBuffer);
+    const liList = document.querySelectorAll('li');
+
+    liList.forEach((pad) => {
+        switch (pad.id) {
+            case 'hihat':
+                let hhList = document.querySelector('#hh');
+                // let hhPad = hhList.querySelector(`${pad.getAttribute('number')}`);
+                // hhPad.setAttribute('pad', hihatPad);
+                // return hhPad;
+                let $hhPad = $(`ul[id="hh"] > li[number="${pad.getAttribute('number')}"]`);
+                $hhPad.data('pad', hihatPad);
+                console.log($hhPad.data('pad'));
+                
+                // pad.setAttribute('pad', hihatPad);
+                // return pad;
+            case 'tom1':
+
+            case 'tom2':
+
+            case 'tom3':
+
+            case 'tom4':
+
+            case 'snare1':
+
+            case 'snare2':
+
+            case 'clap':
+
+            case 'kick':
+
+            case 'sub':
+
+            default:
+                break;
+        }
+    })
+    
+
 })

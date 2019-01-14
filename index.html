@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
         <link rel="stylesheet" type="text/css" media="screen" href="./src/assets/stylesheets/reset.css" />
         <link rel="stylesheet" type="text/scss" media="screen" href="./src/assets/stylesheets/index.scss" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="../dist/bundle.js"></script>
     </head>
     <body>
@@ -15,7 +16,7 @@
             <h1 class="title">Beat Pad (Name WIP)</h1>
 
             <div class="beat-pad">
-                <ul>
+                <ul id="hh">
                     <li id="hihat" number="1" class="pad"></li>
                     <li id="hihat" number="2" class="pad"></li>
                     <li id="hihat" number="3" class="pad"></li>
@@ -33,7 +34,7 @@
                     <li id="hihat" number="15" class="pad"></li>
                     <li id="hihat" number="16" class="pad"></li>
                 </ul>
-                <ul>
+                <ul id="t1">
                     <li id="tom1" number="1" class="pad"></li>
                     <li id="tom1" number="2" class="pad"></li>
                     <li id="tom1" number="3" class="pad"></li>
@@ -51,7 +52,7 @@
                     <li id="tom1" number="15" class="pad"></li>
                     <li id="tom1" number="16" class="pad"></li>
                 </ul>
-                <ul>
+                <ul id="t2">
                     <li id="tom2" number="1" class="pad"></li>
                     <li id="tom2" number="2" class="pad"></li>
                     <li id="tom2" number="3" class="pad"></li>
@@ -69,7 +70,7 @@
                     <li id="tom2" number="15" class="pad"></li>
                     <li id="tom2" number="16" class="pad"></li>
                 </ul>
-                <ul>
+                <ul id="t3">
                     <li id="tom3" number="1" class="pad"></li>
                     <li id="tom3" number="2" class="pad"></li>
                     <li id="tom3" number="3" class="pad"></li>
@@ -87,7 +88,7 @@
                     <li id="tom3" number="15" class="pad"></li>
                     <li id="tom3" number="16" class="pad"></li>
                 </ul>
-                <ul>
+                <ul id="t4">
                     <li id="tom4" number="1" class="pad"></li>
                     <li id="tom4" number="2" class="pad"></li>
                     <li id="tom4" number="3" class="pad"></li>
@@ -105,7 +106,7 @@
                     <li id="tom4" number="15" class="pad"></li>
                     <li id="tom4" number="16" class="pad"></li>
                 </ul>
-                <ul>
+                <ul id="s1">
                     <li id="snare1" number="1" class="pad"></li>
                     <li id="snare1" number="2" class="pad"></li>
                     <li id="snare1" number="3" class="pad"></li>
@@ -123,7 +124,7 @@
                     <li id="snare1" number="15" class="pad"></li>
                     <li id="snare1" number="16" class="pad"></li>
                 </ul>
-                <ul>
+                <ul id="s2">
                     <li id="snare2" number="1" class="pad"></li>
                     <li id="snare2" number="2" class="pad"></li>
                     <li id="snare2" number="3" class="pad"></li>
@@ -141,7 +142,7 @@
                     <li id="snare2" number="15" class="pad"></li>
                     <li id="snare2" number="16" class="pad"></li>
                 </ul>
-                <ul>
+                <ul id="cl">
                     <li id="clap" number="1" class="pad"></li>
                     <li id="clap" number="2" class="pad"></li>
                     <li id="clap" number="3" class="pad"></li>
@@ -159,7 +160,7 @@
                     <li id="clap" number="15" class="pad"></li>
                     <li id="clap" number="16" class="pad"></li>
                 </ul>
-                <ul>
+                <ul id="ki">
                     <li id="kick" number="1" class="pad"></li>
                     <li id="kick" number="2" class="pad"></li>
                     <li id="kick" number="3" class="pad"></li>
@@ -177,7 +178,7 @@
                     <li id="kick" number="15" class="pad"></li>
                     <li id="kick" number="16" class="pad"></li>
                 </ul>
-                <ul>
+                <ul id="sb">
                     <li id="sub" number="1" class="pad"></li>
                     <li id="sub" number="2" class="pad"></li>
                     <li id="sub" number="3" class="pad"></li>

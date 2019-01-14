@@ -6,7 +6,6 @@ export default class Pad {
         this.audioCtx = audioCtx;
         this.audioBuffer;
         this.sampleSource;
-        this.sound = '';
         this.volume = 0;
 
         // this.addEventListener('click', () => {
