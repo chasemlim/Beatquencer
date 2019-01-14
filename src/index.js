@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const playPause = document.querySelector('button');
 
-    playPause.addEventListener('click', function () {
+    playPause.addEventListener('click', function () { // creates play button
 
             if (playPause.getAttribute('data-playing') === 'false') {
                 console.log("YES");
@@ -31,5 +31,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
     }); 
     
+    const hihatPad = new Pad('hihat', audioCtx);
+    const tom1Pad = new Pad('tom1', audioCtx);
+    const tom2Pad = new Pad('tom2', audioCtx);
+    const tom3Pad = new Pad('tom3', audioCtx);
+    const tom4Pad = new Pad('tom4', audioCtx);
+    const snare1Pad = new Pad('snare1', audioCtx);
+    const snare2Pad = new Pad('snare2', audioCtx);
+    const clapPad = new Pad('clap', audioCtx);
+    const kickPad = new Pad('kick', audioCtx);
+    const subPad = new Pad('sub', audioCtx);
+
+    let playLoop = Array.apply(null, Array(10)).map(() => { return Array.apply(null, Array(16)).map(() => { return 0 }) });
+
+    const playSample = (pad) => {
+        pad.play();
+    }
+
     // pad.play(audioCtx, pad.audioBuffer);
 })
