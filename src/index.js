@@ -47,12 +47,11 @@ window.addEventListener('DOMContentLoaded', () => {
         switch (pad.id) {
             case 'hihat':
                 let $hhPad = $(`ul[id="hh"] > li[number="${pad.getAttribute('number')}"]`);
-                $hhPad.data('pad', hihatPad);
+                $hhPad.data('pad', new Pad('hihat', audioCtx));
 
                 let hhList = document.querySelector('#hh');
                 let hhPad = hhList.querySelector(`[number="${pad.getAttribute('number')}"]`);
                 
-                $hhPad.data('pad').connect();
                 hhPad.addEventListener('click', () => {
                     if (!hhPad.classList.contains("on")) {
                         hhPad.classList.add("on");

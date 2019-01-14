@@ -74,7 +74,7 @@ export default class Pad {
         const sample = await this.getFile(this.audioCtx, filePath);
 
         const sampleSource = this.audioCtx.createBufferSource();
-        sampleSource.buffer = sample; // AudioBuffer comes from this.audioBuffer
+        sampleSource.buffer = sample;
         sampleSource.connect(this.audioCtx.destination);
         this.sampleSource = sampleSource;
 
@@ -83,16 +83,12 @@ export default class Pad {
 
 
     play() {
-        // const sampleSource = audioCtx.createBufferSource();
-        // sampleSource.buffer = audioBuffer; // AudioBuffer comes from this.audioBuffer
-        // sampleSource.connect(audioCtx.destination);
-        // this.sampleSource = sampleSource;
-        this.sampleSource.start();      
-        return this.sampleSource;
-    }
+        const sampleSource = this.audioCtx.createBufferSource();
+        sampleSource.buffer = this.audioBuffer;
+        sampleSource.connect(this.audioCtx.destination);
+        this.sampleSource = sampleSource;
 
-    connect() {
-        console.log(this.sampleSource);
-        
+        this.sampleSource.start();
+        return this.sampleSource;
     }
 }
