@@ -1,8 +1,109 @@
 .main-body {
     width: 1366px;
     height: 1000px;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    // background-image: url('background.jpg');
 }
 
-div {
-    margin: 100px;
+.title {
+    margin: auto;
+    color: white;
+    font-size: 60px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+}
+
+.beat-pad {
+    width: 1000px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+    ul {
+        height: 70px;
+        width: 820px;
+        margin: 2.5px auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    li:nth-child(4n+1) {
+        background: #ffffff;
+        background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #828282 100%);
+        background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #828282 100%);
+        background: radial-gradient(ellipse at center, #ffffff 0%, #828282 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#828282', GradientType=1);
+    }
+
+    .pad {
+        background: #4c4c4c;
+        background: -moz-radial-gradient(center, ellipse cover, #4c4c4c 0%, #6d6d6d 100%);
+        background: -webkit-radial-gradient(center, ellipse cover, #4c4c4c 0%, #6d6d6d 100%);
+        background: radial-gradient(ellipse at center, #4c4c4c 0%, #6d6d6d 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c4c4c', endColorstr='#6d6d6d', GradientType=1);
+    }
+
+    // .pad:nth-child(16n+2) {          Logic to increment the progress bar
+    //     outline: 5px solid green;
+    // }
+
+    #hihat:active {
+        background: #fefcea;
+        background: -moz-radial-gradient(center, ellipse cover, #fefcea 0%, #f1da36 100%);
+        background: -webkit-radial-gradient(center, ellipse cover, #fefcea 0%,#f1da36 100%);
+        background: radial-gradient(ellipse at center, #fefcea 0%,#f1da36 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 );
+    }
+
+    #tom1:active, #tom2:active, #tom3:active, #tom4:active {
+        background: #e9ffe5;
+        background: -moz-radial-gradient(center, ellipse cover, #e9ffe5 0%, #2aff00 100%);
+        background: -webkit-radial-gradient(center, ellipse cover, #e9ffe5 0%, #2aff00 100%);
+        background: radial-gradient(ellipse at center, #e9ffe5 0%, #2aff00 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9ffe5', endColorstr='#2aff00', GradientType=1);
+    }
+
+    #snare1:active, #snare2:active {
+        background: #87e0fd;
+        background: -moz-radial-gradient(center, ellipse cover, #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
+        background: -webkit-radial-gradient(center, ellipse cover, #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
+        background: radial-gradient(ellipse at center, #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#87e0fd', endColorstr='#05abe0', GradientType=1);
+    }
+
+    #clap:active {
+        background: #9bdcff;
+        background: -moz-radial-gradient(center, ellipse cover, #9bdcff 0%, #008fe2 100%);
+        background: -webkit-radial-gradient(center, ellipse cover, #9bdcff 0%, #008fe2 100%);
+        background: radial-gradient(ellipse at center, #9bdcff 0%, #008fe2 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9bdcff', endColorstr='#008fe2', GradientType=1);
+    }
+
+    #kick:active {
+        background: #ffc4bf;
+        background: -moz-radial-gradient(center, ellipse cover, #ffc4bf 0%, #fe1818 100%);
+        background: -webkit-radial-gradient(center, ellipse cover, #ffc4bf 0%, #fe1818 100%);
+        background: radial-gradient(ellipse at center, #ffc4bf 0%, #fe1818 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc4bf', endColorstr='#fe1818', GradientType=1);
+    }
+
+    #sub:active {
+        background: #eec4fc;
+        background: -moz-radial-gradient(center, ellipse cover, #eec4fc 0%, #cc30fe 100%);
+        background: -webkit-radial-gradient(center, ellipse cover, #eec4fc 0%, #cc30fe 100%);
+        background: radial-gradient(ellipse at center, #eec4fc 0%, #cc30fe 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eec4fc', endColorstr='#cc30fe', GradientType=1);
+    }
+}
+
+.pad {
+    height: 44px;
+    width: 44px;
+    margin: auto;
+    border: 1px solid grey;
+    border-radius: 5px;
 }
