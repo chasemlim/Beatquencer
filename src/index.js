@@ -53,36 +53,47 @@ window.addEventListener('DOMContentLoaded', () => {
     liList.forEach((pad) => {
         switch (pad.id) {
             case 'hihat':
-                let hhList = document.querySelector('#hh');
-                // let hhPad = hhList.querySelector(`${pad.getAttribute('number')}`);
-                // hhPad.setAttribute('pad', hihatPad);
-                // return hhPad;
                 let $hhPad = $(`ul[id="hh"] > li[number="${pad.getAttribute('number')}"]`);
                 $hhPad.data('pad', hihatPad);
-                console.log($hhPad.data('pad'));
-                
-                // pad.setAttribute('pad', hihatPad);
-                // return pad;
+                return $hhPad;
             case 'tom1':
-
+                let $t1Pad = $(`ul[id="t1"] > li[number="${pad.getAttribute('number')}"]`);
+                $t1Pad.data('pad', tom1Pad);
+                return $t1Pad;
             case 'tom2':
-
+                let $t2Pad = $(`ul[id="t2"] > li[number="${pad.getAttribute('number')}"]`);
+                $t2Pad.data('pad', tom2Pad);
+                return $t2Pad;
             case 'tom3':
-
+                let $t3Pad = $(`ul[id="t3"] > li[number="${pad.getAttribute('number')}"]`);
+                $t3Pad.data('pad', tom3Pad);
+                return $t3Pad;
             case 'tom4':
-
+                let $t4Pad = $(`ul[id="t4"] > li[number="${pad.getAttribute('number')}"]`);
+                $t4Pad.data('pad', tom4Pad);
+                return $t4Pad;
             case 'snare1':
-
+                let $s1Pad = $(`ul[id="s1"] > li[number="${pad.getAttribute('number')}"]`);
+                $s1Pad.data('pad', snare1Pad);
+                return $s1Pad;
             case 'snare2':
-
+                let $s2Pad = $(`ul[id="s2"] > li[number="${pad.getAttribute('number')}"]`);
+                $s2Pad.data('pad', snare2Pad);
+                return $s2Pad;
             case 'clap':
-
+                let $clPad = $(`ul[id="cl"] > li[number="${pad.getAttribute('number')}"]`);
+                $clPad.data('pad', clapPad);
+                return $clPad;
             case 'kick':
-
+                let $kiPad = $(`ul[id="ki"] > li[number="${pad.getAttribute('number')}"]`);
+                $kiPad.data('pad', kickPad);
+                return $kiPad;
             case 'sub':
-
+                let $sbPad = $(`ul[id="sb"] > li[number="${pad.getAttribute('number')}"]`);
+                $sbPad.data('pad', subPad);
+                return $sbPad;
             default:
-                break;
+                return nil;
         }
     })
     
