@@ -27,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
             audioCtx.suspend();
         }
     }); 
-    
+
     const hihatPad = new Pad('hihat', audioCtx);
     const tom1Pad = new Pad('tom1', audioCtx);
     const tom2Pad = new Pad('tom2', audioCtx);
@@ -52,6 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 let hhList = document.querySelector('#hh');
                 let hhPad = hhList.querySelector(`[number="${pad.getAttribute('number')}"]`);
                 
+                $hhPad.data('pad').connect();
                 hhPad.addEventListener('click', () => {
                     if (!hhPad.classList.contains("on")) {
                         hhPad.classList.add("on");

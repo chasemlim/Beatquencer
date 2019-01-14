@@ -90,4 +90,9 @@ export default class Pad {
         this.sampleSource.start();      
         return this.sampleSource;
     }
+
+    connect() {
+        console.log(this.sampleSource);
+        
+    }
 }
