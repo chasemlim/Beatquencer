@@ -51,15 +51,16 @@
     //     outline: 5px solid green;
     // }
 
-    #hihat:active {
-        background: #fefcea;
-        background: -moz-radial-gradient(center, ellipse cover, #fefcea 0%, #f1da36 100%);
-        background: -webkit-radial-gradient(center, ellipse cover, #fefcea 0%,#f1da36 100%);
-        background: radial-gradient(ellipse at center, #fefcea 0%,#f1da36 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 );
-    }
+    #hh > .on {
+            background: #fefcea;
+            background: -moz-radial-gradient(center, ellipse cover, #fefcea 0%, #f1da36 100%);
+            background: -webkit-radial-gradient(center, ellipse cover, #fefcea 0%, #f1da36 100%);
+            background: radial-gradient(ellipse at center, #fefcea 0%, #f1da36 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefcea', endColorstr='#f1da36', GradientType=1);
+        }
+    
 
-    #tom1:active, #tom2:active, #tom3:active, #tom4:active {
+    #t1 > .on, #t2 > .on, #t3 > .on, #t4 > .on {
         background: #e9ffe5;
         background: -moz-radial-gradient(center, ellipse cover, #e9ffe5 0%, #2aff00 100%);
         background: -webkit-radial-gradient(center, ellipse cover, #e9ffe5 0%, #2aff00 100%);

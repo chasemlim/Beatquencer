@@ -88,6 +88,6 @@ export default class Pad {
         // sampleSource.connect(audioCtx.destination);
         // this.sampleSource = sampleSource;
         this.sampleSource.start();      
-        return sampleSource;
+        return this.sampleSource;
     }
 }

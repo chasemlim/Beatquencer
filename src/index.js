@@ -7,28 +7,25 @@ window.addEventListener('DOMContentLoaded', () => {
     const audioCtx = new AudioContext();
     audioCtx.suspend(); // AudioContext resume once user presses a button
 
-    const pad = new Pad('', audioCtx);
-
     const board = new Board(audioCtx);
+
+    let playing = true;
 
     const playPause = document.querySelector('button');
 
     playPause.addEventListener('click', function () { // creates play button
 
-            if (playPause.getAttribute('data-playing') === 'false') {
-                console.log("YES");
-                
-                playPause.setAttribute('data-playing', true);
-                audioCtx.resume();
-            } else {
-                console.log(playPause.getAttribute('data-playing'));
-                
-                playPause.setAttribute('data-playing', false);
-                audioCtx.suspend();
-            }
+        if (playPause.getAttribute('data-playing') === 'false') {
 
-            pad.play(audioCtx, pad.audioBuffer);
+            playPause.setAttribute('data-playing', true);
+            playing = true;
+            audioCtx.resume();
+        } else {
 
+            playPause.setAttribute('data-playing', false);
+            playing = false;
+            audioCtx.suspend();
+        }
     }); 
     
     const hihatPad = new Pad('hihat', audioCtx);
@@ -42,20 +39,31 @@ window.addEventListener('DOMContentLoaded', () => {
     const kickPad = new Pad('kick', audioCtx);
     const subPad = new Pad('sub', audioCtx);
 
-    let playLoop = Array.apply(null, Array(10)).map(() => { return Array.apply(null, Array(16)).map(() => { return 0 }) });
-
-    const playSample = (pad) => {
-        pad.play();
-    }
-
     const liList = document.querySelectorAll('li');
+
+    let playLoop = Array.apply(null, Array(10)).map(() => { return Array.apply(null, Array(16)).map(() => { return 0 }) });
 
     liList.forEach((pad) => {
         switch (pad.id) {
             case 'hihat':
                 let $hhPad = $(`ul[id="hh"] > li[number="${pad.getAttribute('number')}"]`);
                 $hhPad.data('pad', hihatPad);
-                return $hhPad;
+
+                let hhList = document.querySelector('#hh');
+                let hhPad = hhList.querySelector(`[number="${pad.getAttribute('number')}"]`);
+                
+                hhPad.addEventListener('click', () => {
+                    if (!hhPad.classList.contains("on")) {
+                        hhPad.classList.add("on");
+
+                        playLoop[0][parseInt(pad.getAttribute('number')) - 1] = 1;
+                        $hhPad.data("pad").play();
+                    } else {
+                        hhPad.classList.remove("on");
+                        playLoop[0][parseInt(pad.getAttribute('number')) - 1] = 0;
+                    }
+                })
+                
             case 'tom1':
                 let $t1Pad = $(`ul[id="t1"] > li[number="${pad.getAttribute('number')}"]`);
                 $t1Pad.data('pad', tom1Pad);
@@ -97,5 +105,11 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     })
     
+    
+    const playSample = (pad) => {
+        pad.play();
+    }
+
+
 
 })
