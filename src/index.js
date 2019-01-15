@@ -266,7 +266,58 @@ window.addEventListener('DOMContentLoaded', () => {
         pad.play();
     }
 
+    let tempo = 128;
+    const tempoControl = document.querySelector("#tempo");
+    tempoControl.addEventListener('input', () => {
+        tempo = Number(this.value);
+    }, false)
+
+
+    let currentPad = 0;
+    let nextPadTiming = 0.0;
+
+    const nextPad = () => {
+        const secondsPerBeat = 60.0 / tempo;
+
+        nextPadTiming += secondsPerBeat;
+
+        currentPad++;
+        if (currentPad == 16) currentPad = 0;
+    }
+
+    const padQueue = [];
+    const pads = document.querySelectorAll("ul");
+    console.log(pads);
     
+    console.log(playLoop);
+    
+    const schedulePad = (beatNum, time) => {
+        padQueue.push({ pad: beatNum, time: time });
 
+        let $hhPad = $(`ul[id="hh"] > li[number="${currentPad + 1}"]`);
+        let $t1Pad = $(`ul[id="t1"] > li[number="${currentPad + 1}"]`);
+        let $t2Pad = $(`ul[id="t2"] > li[number="${currentPad + 1}"]`);
+        let $t3Pad = $(`ul[id="t3"] > li[number="${currentPad + 1}"]`);
+        let $t4Pad = $(`ul[id="t4"] > li[number="${currentPad + 1}"]`);
+        let $s1Pad = $(`ul[id="s1"] > li[number="${currentPad + 1}"]`);
+        let $s2Pad = $(`ul[id="s2"] > li[number="${currentPad + 1}"]`);
+        let $clPad = $(`ul[id="cl"] > li[number="${currentPad + 1}"]`);
+        let $kiPad = $(`ul[id="ki"] > li[number="${currentPad + 1}"]`);
+        let $sbPad = $(`ul[id="sb"] > li[number="${currentPad + 1}"]`);
 
+        if (playLoop[0][currentPad] === 1) playSample($hhPad.data('pad'));
+        if (playLoop[1][currentPad] === 1) playSample($t1Pad.data('pad'));
+        if (playLoop[2][currentPad] === 1) playSample($t2Pad.data('pad'));
+        if (playLoop[3][currentPad] === 1) playSample($t3Pad.data('pad'));
+        if (playLoop[4][currentPad] === 1) playSample($t4Pad.data('pad'));
+        if (playLoop[5][currentPad] === 1) playSample($s1Pad.data('pad'));
+        if (playLoop[6][currentPad] === 1) playSample($s2Pad.data('pad'));
+        if (playLoop[7][currentPad] === 1) playSample($clPad.data('pad'));
+        if (playLoop[8][currentPad] === 1) playSample($kiPad.data('pad'));
+        if (playLoop[9][currentPad] === 1) playSample($sbPad.data('pad'));
+    }
+
+    const scheduler = () => {
+
+    }
 })

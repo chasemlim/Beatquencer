@@ -9,7 +9,7 @@
 }
 
 .title {
-    margin: auto;
+    margin: 20px auto 50px auto;
     color: white;
     font-size: 60px;
     font-family: 'Orbitron', sans-serif;
@@ -21,6 +21,7 @@
     flex-direction: row;
     width: 1000px;
     height: 600px;
+    margin: 50px auto;
 }
 
 .beat-pad {
@@ -123,7 +124,7 @@
 // }
 
 .tempo-div {
-    margin: auto;
+    margin: auto -240px auto -250px;
     display: flex;
     width: 460px;
     height: 100px;
@@ -136,4 +137,19 @@
     height: 100px;
     width: 460px;
 
+}
+
+.tempo-markers {
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 500px;
+    margin: auto 0 auto -8px;
+
+    p {
+        color: white;
+        font-family: 'Orbitron', sans-serif;
+        margin: 0 auto;
+    }
 }
