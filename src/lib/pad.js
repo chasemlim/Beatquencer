@@ -8,28 +8,7 @@ export default class Pad {
         this.sampleSource;
         this.volume = 0;
 
-        // this.addEventListener('click', () => {
-        //     if (this.getAttribute('aria-checked') === false) {
-        //         this.setAttribute('aria-checked', 'true');
-        //     } else {
-        //         this.setAttribute('aria-checked', 'false');
-        //     }
-        // })
-
         this.setupSample()
-            .then((sample) => {
-
-                // const playButton = document.querySelector('playpause');
-
-                // if (!playButton.classList.contains('init')) {
-                //     playButton.addEventListener('click', e => {
-                        
-                //     })
-                // }
-
-            })
-
-        // this.sound.connect(audioCtx.destination);
     }
 
     determineSound() {

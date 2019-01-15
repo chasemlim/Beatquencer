@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
         <link rel="stylesheet" type="text/css" media="screen" href="./src/assets/stylesheets/reset.css" />
         <link rel="stylesheet" type="text/scss" media="screen" href="./src/assets/stylesheets/index.scss" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
         <script src="../dist/bundle.js"></script>
     </head>
@@ -15,209 +16,214 @@
         <div class="main-body">
             <h1 class="title">Beat Pad (Name WIP)</h1>
 
-            <div class="tempo-display">
-                <p id="bpm-value">128</p>
-                <p class="bpm-word">BPM</p>
-            </div>
             <div class="beat-tempo-div">
-                <div class="beat-pad">
-                    <ul id="hh">
-                        <li number="1" class="pad hihat" padType="hihat"></li>
-                        <li number="2" class="pad hihat" padType="hihat"></li>
-                        <li number="3" class="pad hihat" padType="hihat"></li>
-                        <li number="4" class="pad hihat" padType="hihat"></li>
-                        <li number="5" class="pad hihat" padType="hihat"></li>
-                        <li number="6" class="pad hihat" padType="hihat"></li>
-                        <li number="7" class="pad hihat" padType="hihat"></li>
-                        <li number="8" class="pad hihat" padType="hihat"></li>
-                        <li number="9" class="pad hihat" padType="hihat"></li>
-                        <li number="10" class="pad hihat" padType="hihat"></li>
-                        <li number="11" class="pad hihat" padType="hihat"></li>
-                        <li number="12" class="pad hihat" padType="hihat"></li>
-                        <li number="13" class="pad hihat" padType="hihat"></li>
-                        <li number="14" class="pad hihat" padType="hihat"></li>
-                        <li number="15" class="pad hihat" padType="hihat"></li>
-                        <li number="16" class="pad hihat" padType="hihat"></li>
-                    </ul>
-                    <ul id="t1">
-                        <li number="1" class="pad tom1" padType="tom1"></li>
-                        <li number="2" class="pad tom1" padType="tom1"></li>
-                        <li number="3" class="pad tom1" padType="tom1"></li>
-                        <li number="4" class="pad tom1" padType="tom1"></li>
-                        <li number="5" class="pad tom1" padType="tom1"></li>
-                        <li number="6" class="pad tom1" padType="tom1"></li>
-                        <li number="7" class="pad tom1" padType="tom1"></li>
-                        <li number="8" class="pad tom1" padType="tom1"></li>
-                        <li number="9" class="pad tom1" padType="tom1"></li>
-                        <li number="10" class="pad tom1" padType="tom1"></li>
-                        <li number="11" class="pad tom1" padType="tom1"></li>
-                        <li number="12" class="pad tom1" padType="tom1"></li>
-                        <li number="13" class="pad tom1" padType="tom1"></li>
-                        <li number="14" class="pad tom1" padType="tom1"></li>
-                        <li number="15" class="pad tom1" padType="tom1"></li>
-                        <li number="16" class="pad tom1" padType="tom1"></li>
-                    </ul>
-                    <ul id="t2">
-                        <li number="1" class="pad tom2" padType="tom2"></li>
-                        <li number="2" class="pad tom2" padType="tom2"></li>
-                        <li number="3" class="pad tom2" padType="tom2"></li>
-                        <li number="4" class="pad tom2" padType="tom2"></li>
-                        <li number="5" class="pad tom2" padType="tom2"></li>
-                        <li number="6" class="pad tom2" padType="tom2"></li>
-                        <li number="7" class="pad tom2" padType="tom2"></li>
-                        <li number="8" class="pad tom2" padType="tom2"></li>
-                        <li number="9" class="pad tom2" padType="tom2"></li>
-                        <li number="10" class="pad tom2" padType="tom2"></li>
-                        <li number="11" class="pad tom2" padType="tom2"></li>
-                        <li number="12" class="pad tom2" padType="tom2"></li>
-                        <li number="13" class="pad tom2" padType="tom2"></li>
-                        <li number="14" class="pad tom2" padType="tom2"></li>
-                        <li number="15" class="pad tom2" padType="tom2"></li>
-                        <li number="16" class="pad tom2" padType="tom2"></li>
-                    </ul>
-                    <ul id="t3">
-                        <li number="1" class="pad tom3" padType="tom3"></li>
-                        <li number="2" class="pad tom3" padType="tom3"></li>
-                        <li number="3" class="pad tom3" padType="tom3"></li>
-                        <li number="4" class="pad tom3" padType="tom3"></li>
-                        <li number="5" class="pad tom3" padType="tom3"></li>
-                        <li number="6" class="pad tom3" padType="tom3"></li>
-                        <li number="7" class="pad tom3" padType="tom3"></li>
-                        <li number="8" class="pad tom3" padType="tom3"></li>
-                        <li number="9" class="pad tom3" padType="tom3"></li>
-                        <li number="10" class="pad tom3" padType="tom3"></li>
-                        <li number="11" class="pad tom3" padType="tom3"></li>
-                        <li number="12" class="pad tom3" padType="tom3"></li>
-                        <li number="13" class="pad tom3" padType="tom3"></li>
-                        <li number="14" class="pad tom3" padType="tom3"></li>
-                        <li number="15" class="pad tom3" padType="tom3"></li>
-                        <li number="16" class="pad tom3" padType="tom3"></li>
-                    </ul>
-                    <ul id="t4">
-                        <li number="1" class="pad tom4" padType="tom4"></li>
-                        <li number="2" class="pad tom4" padType="tom4"></li>
-                        <li number="3" class="pad tom4" padType="tom4"></li>
-                        <li number="4" class="pad tom4" padType="tom4"></li>
-                        <li number="5" class="pad tom4" padType="tom4"></li>
-                        <li number="6" class="pad tom4" padType="tom4"></li>
-                        <li number="7" class="pad tom4" padType="tom4"></li>
-                        <li number="8" class="pad tom4" padType="tom4"></li>
-                        <li number="9" class="pad tom4" padType="tom4"></li>
-                        <li number="10" class="pad tom4" padType="tom4"></li>
-                        <li number="11" class="pad tom4" padType="tom4"></li>
-                        <li number="12" class="pad tom4" padType="tom4"></li>
-                        <li number="13" class="pad tom4" padType="tom4"></li>
-                        <li number="14" class="pad tom4" padType="tom4"></li>
-                        <li number="15" class="pad tom4" padType="tom4"></li>
-                        <li number="16" class="pad tom4" padType="tom4"></li>
-                    </ul>
-                    <ul id="s1">
-                        <li number="1" class="pad snare1" padType="snare1"></li>
-                        <li number="2" class="pad snare1" padType="snare1"></li>
-                        <li number="3" class="pad snare1" padType="snare1"></li>
-                        <li number="4" class="pad snare1" padType="snare1"></li>
-                        <li number="5" class="pad snare1" padType="snare1"></li>
-                        <li number="6" class="pad snare1" padType="snare1"></li>
-                        <li number="7" class="pad snare1" padType="snare1"></li>
-                        <li number="8" class="pad snare1" padType="snare1"></li>
-                        <li number="9" class="pad snare1" padType="snare1"></li>
-                        <li number="10" class="pad snare1" padType="snare1"></li>
-                        <li number="11" class="pad snare1" padType="snare1"></li>
-                        <li number="12" class="pad snare1" padType="snare1"></li>
-                        <li number="13" class="pad snare1" padType="snare1"></li>
-                        <li number="14" class="pad snare1" padType="snare1"></li>
-                        <li number="15" class="pad snare1" padType="snare1"></li>
-                        <li number="16" class="pad snare1" padType="snare1"></li>
-                    </ul>
-                    <ul id="s2">
-                        <li number="1" class="pad snare2" padType="snare2"></li>
-                        <li number="2" class="pad snare2" padType="snare2"></li>
-                        <li number="3" class="pad snare2" padType="snare2"></li>
-                        <li number="4" class="pad snare2" padType="snare2"></li>
-                        <li number="5" class="pad snare2" padType="snare2"></li>
-                        <li number="6" class="pad snare2" padType="snare2"></li>
-                        <li number="7" class="pad snare2" padType="snare2"></li>
-                        <li number="8" class="pad snare2" padType="snare2"></li>
-                        <li number="9" class="pad snare2" padType="snare2"></li>
-                        <li number="10" class="pad snare2" padType="snare2"></li>
-                        <li number="11" class="pad snare2" padType="snare2"></li>
-                        <li number="12" class="pad snare2" padType="snare2"></li>
-                        <li number="13" class="pad snare2" padType="snare2"></li>
-                        <li number="14" class="pad snare2" padType="snare2"></li>
-                        <li number="15" class="pad snare2" padType="snare2"></li>
-                        <li number="16" class="pad snare2" padType="snare2"></li>
-                    </ul>
-                    <ul id="cl">
-                        <li number="1" class="pad clap" padType="clap"></li>
-                        <li number="2" class="pad clap" padType="clap"></li>
-                        <li number="3" class="pad clap" padType="clap"></li>
-                        <li number="4" class="pad clap" padType="clap"></li>
-                        <li number="5" class="pad clap" padType="clap"></li>
-                        <li number="6" class="pad clap" padType="clap"></li>
-                        <li number="7" class="pad clap" padType="clap"></li>
-                        <li number="8" class="pad clap" padType="clap"></li>
-                        <li number="9" class="pad clap" padType="clap"></li>
-                        <li number="10" class="pad clap" padType="clap"></li>
-                        <li number="11" class="pad clap" padType="clap"></li>
-                        <li number="12" class="pad clap" padType="clap"></li>
-                        <li number="13" class="pad clap" padType="clap"></li>
-                        <li number="14" class="pad clap" padType="clap"></li>
-                        <li number="15" class="pad clap" padType="clap"></li>
-                        <li number="16" class="pad clap" padType="clap"></li>
-                    </ul>
-                    <ul id="ki">
-                        <li number="1" class="pad kick" padType="kick"></li>
-                        <li number="2" class="pad kick" padType="kick"></li>
-                        <li number="3" class="pad kick" padType="kick"></li>
-                        <li number="4" class="pad kick" padType="kick"></li>
-                        <li number="5" class="pad kick" padType="kick"></li>
-                        <li number="6" class="pad kick" padType="kick"></li>
-                        <li number="7" class="pad kick" padType="kick"></li>
-                        <li number="8" class="pad kick" padType="kick"></li>
-                        <li number="9" class="pad kick" padType="kick"></li>
-                        <li number="10" class="pad kick" padType="kick"></li>
-                        <li number="11" class="pad kick" padType="kick"></li>
-                        <li number="12" class="pad kick" padType="kick"></li>
-                        <li number="13" class="pad kick" padType="kick"></li>
-                        <li number="14" class="pad kick" padType="kick"></li>
-                        <li number="15" class="pad kick" padType="kick"></li>
-                        <li number="16" class="pad kick" padType="kick"></li>
-                    </ul>
-                    <ul id="sb">
-                        <li number="1" class="pad sub" padType="sub"></li>
-                        <li number="2" class="pad sub" padType="sub"></li>
-                        <li number="3" class="pad sub" padType="sub"></li>
-                        <li number="4" class="pad sub" padType="sub"></li>
-                        <li number="5" class="pad sub" padType="sub"></li>
-                        <li number="6" class="pad sub" padType="sub"></li>
-                        <li number="7" class="pad sub" padType="sub"></li>
-                        <li number="8" class="pad sub" padType="sub"></li>
-                        <li number="9" class="pad sub" padType="sub"></li>
-                        <li number="10" class="pad sub" padType="sub"></li>
-                        <li number="11" class="pad sub" padType="sub"></li>
-                        <li number="12" class="pad sub" padType="sub"></li>
-                        <li number="13" class="pad sub" padType="sub"></li>
-                        <li number="14" class="pad sub" padType="sub"></li>
-                        <li number="15" class="pad sub" padType="sub"></li>
-                        <li number="16" class="pad sub" padType="sub"></li>
-                    </ul>
-                </div>
 
-                <div class="tempo-div">
-                    <input id="tempo" class="tempo-slider" type="range" min="30" max="240" value="128"/>
+                <div class="tempo-display">
+                    <div class="tempo-words">
+                        <p id="bpm-value">128</p>
+                        <p class="bpm-word">BPM</p>
+                    </div>
                 </div>
-                <div class="tempo-markers">
-                    <p class="t240">240</p>
-                    <p class="t30">30</p>
+                
+                <div class="bottom-bt-div">
+                    <div class="beat-pad">
+                        <ul id="hh">
+                            <li number="1" class="pad hihat" padType="hihat"></li>
+                            <li number="2" class="pad hihat" padType="hihat"></li>
+                            <li number="3" class="pad hihat" padType="hihat"></li>
+                            <li number="4" class="pad hihat" padType="hihat"></li>
+                            <li number="5" class="pad hihat" padType="hihat"></li>
+                            <li number="6" class="pad hihat" padType="hihat"></li>
+                            <li number="7" class="pad hihat" padType="hihat"></li>
+                            <li number="8" class="pad hihat" padType="hihat"></li>
+                            <li number="9" class="pad hihat" padType="hihat"></li>
+                            <li number="10" class="pad hihat" padType="hihat"></li>
+                            <li number="11" class="pad hihat" padType="hihat"></li>
+                            <li number="12" class="pad hihat" padType="hihat"></li>
+                            <li number="13" class="pad hihat" padType="hihat"></li>
+                            <li number="14" class="pad hihat" padType="hihat"></li>
+                            <li number="15" class="pad hihat" padType="hihat"></li>
+                            <li number="16" class="pad hihat" padType="hihat"></li>
+                        </ul>
+                        <ul id="t1">
+                            <li number="1" class="pad tom1" padType="tom1"></li>
+                            <li number="2" class="pad tom1" padType="tom1"></li>
+                            <li number="3" class="pad tom1" padType="tom1"></li>
+                            <li number="4" class="pad tom1" padType="tom1"></li>
+                            <li number="5" class="pad tom1" padType="tom1"></li>
+                            <li number="6" class="pad tom1" padType="tom1"></li>
+                            <li number="7" class="pad tom1" padType="tom1"></li>
+                            <li number="8" class="pad tom1" padType="tom1"></li>
+                            <li number="9" class="pad tom1" padType="tom1"></li>
+                            <li number="10" class="pad tom1" padType="tom1"></li>
+                            <li number="11" class="pad tom1" padType="tom1"></li>
+                            <li number="12" class="pad tom1" padType="tom1"></li>
+                            <li number="13" class="pad tom1" padType="tom1"></li>
+                            <li number="14" class="pad tom1" padType="tom1"></li>
+                            <li number="15" class="pad tom1" padType="tom1"></li>
+                            <li number="16" class="pad tom1" padType="tom1"></li>
+                        </ul>
+                        <ul id="t2">
+                            <li number="1" class="pad tom2" padType="tom2"></li>
+                            <li number="2" class="pad tom2" padType="tom2"></li>
+                            <li number="3" class="pad tom2" padType="tom2"></li>
+                            <li number="4" class="pad tom2" padType="tom2"></li>
+                            <li number="5" class="pad tom2" padType="tom2"></li>
+                            <li number="6" class="pad tom2" padType="tom2"></li>
+                            <li number="7" class="pad tom2" padType="tom2"></li>
+                            <li number="8" class="pad tom2" padType="tom2"></li>
+                            <li number="9" class="pad tom2" padType="tom2"></li>
+                            <li number="10" class="pad tom2" padType="tom2"></li>
+                            <li number="11" class="pad tom2" padType="tom2"></li>
+                            <li number="12" class="pad tom2" padType="tom2"></li>
+                            <li number="13" class="pad tom2" padType="tom2"></li>
+                            <li number="14" class="pad tom2" padType="tom2"></li>
+                            <li number="15" class="pad tom2" padType="tom2"></li>
+                            <li number="16" class="pad tom2" padType="tom2"></li>
+                        </ul>
+                        <ul id="t3">
+                            <li number="1" class="pad tom3" padType="tom3"></li>
+                            <li number="2" class="pad tom3" padType="tom3"></li>
+                            <li number="3" class="pad tom3" padType="tom3"></li>
+                            <li number="4" class="pad tom3" padType="tom3"></li>
+                            <li number="5" class="pad tom3" padType="tom3"></li>
+                            <li number="6" class="pad tom3" padType="tom3"></li>
+                            <li number="7" class="pad tom3" padType="tom3"></li>
+                            <li number="8" class="pad tom3" padType="tom3"></li>
+                            <li number="9" class="pad tom3" padType="tom3"></li>
+                            <li number="10" class="pad tom3" padType="tom3"></li>
+                            <li number="11" class="pad tom3" padType="tom3"></li>
+                            <li number="12" class="pad tom3" padType="tom3"></li>
+                            <li number="13" class="pad tom3" padType="tom3"></li>
+                            <li number="14" class="pad tom3" padType="tom3"></li>
+                            <li number="15" class="pad tom3" padType="tom3"></li>
+                            <li number="16" class="pad tom3" padType="tom3"></li>
+                        </ul>
+                        <ul id="t4">
+                            <li number="1" class="pad tom4" padType="tom4"></li>
+                            <li number="2" class="pad tom4" padType="tom4"></li>
+                            <li number="3" class="pad tom4" padType="tom4"></li>
+                            <li number="4" class="pad tom4" padType="tom4"></li>
+                            <li number="5" class="pad tom4" padType="tom4"></li>
+                            <li number="6" class="pad tom4" padType="tom4"></li>
+                            <li number="7" class="pad tom4" padType="tom4"></li>
+                            <li number="8" class="pad tom4" padType="tom4"></li>
+                            <li number="9" class="pad tom4" padType="tom4"></li>
+                            <li number="10" class="pad tom4" padType="tom4"></li>
+                            <li number="11" class="pad tom4" padType="tom4"></li>
+                            <li number="12" class="pad tom4" padType="tom4"></li>
+                            <li number="13" class="pad tom4" padType="tom4"></li>
+                            <li number="14" class="pad tom4" padType="tom4"></li>
+                            <li number="15" class="pad tom4" padType="tom4"></li>
+                            <li number="16" class="pad tom4" padType="tom4"></li>
+                        </ul>
+                        <ul id="s1">
+                            <li number="1" class="pad snare1" padType="snare1"></li>
+                            <li number="2" class="pad snare1" padType="snare1"></li>
+                            <li number="3" class="pad snare1" padType="snare1"></li>
+                            <li number="4" class="pad snare1" padType="snare1"></li>
+                            <li number="5" class="pad snare1" padType="snare1"></li>
+                            <li number="6" class="pad snare1" padType="snare1"></li>
+                            <li number="7" class="pad snare1" padType="snare1"></li>
+                            <li number="8" class="pad snare1" padType="snare1"></li>
+                            <li number="9" class="pad snare1" padType="snare1"></li>
+                            <li number="10" class="pad snare1" padType="snare1"></li>
+                            <li number="11" class="pad snare1" padType="snare1"></li>
+                            <li number="12" class="pad snare1" padType="snare1"></li>
+                            <li number="13" class="pad snare1" padType="snare1"></li>
+                            <li number="14" class="pad snare1" padType="snare1"></li>
+                            <li number="15" class="pad snare1" padType="snare1"></li>
+                            <li number="16" class="pad snare1" padType="snare1"></li>
+                        </ul>
+                        <ul id="s2">
+                            <li number="1" class="pad snare2" padType="snare2"></li>
+                            <li number="2" class="pad snare2" padType="snare2"></li>
+                            <li number="3" class="pad snare2" padType="snare2"></li>
+                            <li number="4" class="pad snare2" padType="snare2"></li>
+                            <li number="5" class="pad snare2" padType="snare2"></li>
+                            <li number="6" class="pad snare2" padType="snare2"></li>
+                            <li number="7" class="pad snare2" padType="snare2"></li>
+                            <li number="8" class="pad snare2" padType="snare2"></li>
+                            <li number="9" class="pad snare2" padType="snare2"></li>
+                            <li number="10" class="pad snare2" padType="snare2"></li>
+                            <li number="11" class="pad snare2" padType="snare2"></li>
+                            <li number="12" class="pad snare2" padType="snare2"></li>
+                            <li number="13" class="pad snare2" padType="snare2"></li>
+                            <li number="14" class="pad snare2" padType="snare2"></li>
+                            <li number="15" class="pad snare2" padType="snare2"></li>
+                            <li number="16" class="pad snare2" padType="snare2"></li>
+                        </ul>
+                        <ul id="cl">
+                            <li number="1" class="pad clap" padType="clap"></li>
+                            <li number="2" class="pad clap" padType="clap"></li>
+                            <li number="3" class="pad clap" padType="clap"></li>
+                            <li number="4" class="pad clap" padType="clap"></li>
+                            <li number="5" class="pad clap" padType="clap"></li>
+                            <li number="6" class="pad clap" padType="clap"></li>
+                            <li number="7" class="pad clap" padType="clap"></li>
+                            <li number="8" class="pad clap" padType="clap"></li>
+                            <li number="9" class="pad clap" padType="clap"></li>
+                            <li number="10" class="pad clap" padType="clap"></li>
+                            <li number="11" class="pad clap" padType="clap"></li>
+                            <li number="12" class="pad clap" padType="clap"></li>
+                            <li number="13" class="pad clap" padType="clap"></li>
+                            <li number="14" class="pad clap" padType="clap"></li>
+                            <li number="15" class="pad clap" padType="clap"></li>
+                            <li number="16" class="pad clap" padType="clap"></li>
+                        </ul>
+                        <ul id="ki">
+                            <li number="1" class="pad kick" padType="kick"></li>
+                            <li number="2" class="pad kick" padType="kick"></li>
+                            <li number="3" class="pad kick" padType="kick"></li>
+                            <li number="4" class="pad kick" padType="kick"></li>
+                            <li number="5" class="pad kick" padType="kick"></li>
+                            <li number="6" class="pad kick" padType="kick"></li>
+                            <li number="7" class="pad kick" padType="kick"></li>
+                            <li number="8" class="pad kick" padType="kick"></li>
+                            <li number="9" class="pad kick" padType="kick"></li>
+                            <li number="10" class="pad kick" padType="kick"></li>
+                            <li number="11" class="pad kick" padType="kick"></li>
+                            <li number="12" class="pad kick" padType="kick"></li>
+                            <li number="13" class="pad kick" padType="kick"></li>
+                            <li number="14" class="pad kick" padType="kick"></li>
+                            <li number="15" class="pad kick" padType="kick"></li>
+                            <li number="16" class="pad kick" padType="kick"></li>
+                        </ul>
+                        <ul id="sb">
+                            <li number="1" class="pad sub" padType="sub"></li>
+                            <li number="2" class="pad sub" padType="sub"></li>
+                            <li number="3" class="pad sub" padType="sub"></li>
+                            <li number="4" class="pad sub" padType="sub"></li>
+                            <li number="5" class="pad sub" padType="sub"></li>
+                            <li number="6" class="pad sub" padType="sub"></li>
+                            <li number="7" class="pad sub" padType="sub"></li>
+                            <li number="8" class="pad sub" padType="sub"></li>
+                            <li number="9" class="pad sub" padType="sub"></li>
+                            <li number="10" class="pad sub" padType="sub"></li>
+                            <li number="11" class="pad sub" padType="sub"></li>
+                            <li number="12" class="pad sub" padType="sub"></li>
+                            <li number="13" class="pad sub" padType="sub"></li>
+                            <li number="14" class="pad sub" padType="sub"></li>
+                            <li number="15" class="pad sub" padType="sub"></li>
+                            <li number="16" class="pad sub" padType="sub"></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tempo-div">
+                        <input id="tempo" class="tempo-slider" type="range" min="30" max="240" value="128" />
+                    </div>
+                    <div class="tempo-markers">
+                        <p class="t240">240</p>
+                        <p class="t30">30</p>
+                    </div>
                 </div>
+                
             </div>
             
+            <div class="play-div">
+                <i class="fas fa-play play-pause-button" data-playing='false'></i>
+            </div>
 
-            
-
-            <button id="playpause" data-playing="false" role="switch" aria-checked="false">
-                <span>Play/Pause</span>
-            </button>
         </div>
 
     </body>

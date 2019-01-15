@@ -272,11 +272,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const padQueue = [];
-    const pads = document.querySelectorAll("ul");
-    console.log(pads);
-    
-    console.log(playLoop);
-    
+
     const schedulePad = (beatNum, time) => {
         padQueue.push({ pad: beatNum, time: time });
 
@@ -315,22 +311,61 @@ window.addEventListener('DOMContentLoaded', () => {
         timerID = window.setTimeout(scheduler, lookahead);
     }
 
-    const playPause = document.querySelector('button');
+
+    // let lastPadDrawn = 15;
+    // let pads = document.querySelectorAll('ul');
+
+    // const draw = () => {
+    //     let drawPad = lastPadDrawn;
+    //     const currentTime = audioCtx.currentTime;
+
+    //     while (padQueue.length && padQueue[0].time < currentTime) {
+    //         drawPad = padQueue[0].pad;
+    //         padQueue.shift;
+    //     }
+
+    //     if (lastPadDrawn !== drawPad) {
+    //         pads.forEach(ul => {
+    //             ul.children[lastPadDrawn].classList.remove('beat-active');
+    //             ul.children[drawPad].classList.add('beat-active');
+    //         })
+
+    //         lastPadDrawn = drawPad;
+    //     }
+
+    //     requestAnimationFrame(draw);
+    // }
+
+
+    const playPause = document.querySelector('i');
+
+    const switchIcon = (button) => {
+        if (button.classList.contains('fa-play')) {
+            button.classList.remove('fa-play');
+            button.classList.add('fa-pause');
+        } else {
+            button.classList.remove('fa-pause');
+            button.classList.add('fa-play');
+        }
+    }
 
     playPause.addEventListener('click', function () { // creates play button
 
         if (playPause.getAttribute('data-playing') === 'false') {
 
+            switchIcon(playPause);
             playPause.setAttribute('data-playing', true);
             playing = true;
             audioCtx.resume();
 
             currentPad = 0;
             nextPadTiming = audioCtx.currentTime;
-            scheduler();        
+            scheduler();
+            // requestAnimationFrame(draw);
         } else {
             window.clearTimeout(timerID);
 
+            switchIcon(playPause);
             playPause.setAttribute('data-playing', false);
             playing = false;       
         }
