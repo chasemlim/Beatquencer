@@ -47,7 +47,7 @@ export default class Pad {
             case 'snare1':
                 return '../src/assets/audio/snare1.wav';
             case 'snare2':
-                return '../src/assets/audio/snare1.wav';
+                return '../src/assets/audio/snare2.wav';
             case 'clap':
                 return '../src/assets/audio/clap.wav';
             case 'kick':

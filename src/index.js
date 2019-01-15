@@ -40,26 +40,28 @@ window.addEventListener('DOMContentLoaded', () => {
     const subPad = new Pad('sub', audioCtx);
 
     const liList = document.querySelectorAll('li');
-    
+
     let playLoop = Array.apply(null, Array(10)).map(() => { return Array.apply(null, Array(16)).map(() => { return 0 }) });
 
-    liList.forEach((pad) => {    
-        switch (pad.id) {
-            case 'hihat':         
+    liList.forEach((pad) => {
+        switch (pad.getAttribute('padType')) {
+            case 'hihat':
                 let $hhPad = $(`ul[id="hh"] > li[number="${pad.getAttribute('number')}"]`);
                 $hhPad.data('pad', hihatPad);
 
                 let hhList = document.querySelector('#hh');
                 let hhPad = hhList.querySelector(`[number="${pad.getAttribute('number')}"]`);
                 
-                hhPad.addEventListener('click', () => {
-                    if (!hhPad.classList.contains("on")) {
-                        hhPad.classList.add("on");
+                hhPad.setAttribute('data-active', 'off');
 
+                hhPad.addEventListener('click', () => {
+                    if (hhPad.getAttribute('data-active') === 'off') {
+                        hhPad.setAttribute('data-active', 'on');
                         playLoop[0][parseInt(pad.getAttribute('number')) - 1] = 1;
+
                         $hhPad.data("pad").play();
                     } else {
-                        hhPad.classList.remove("on");
+                        hhPad.setAttribute('data-active', 'off');                   
                         playLoop[0][parseInt(pad.getAttribute('number')) - 1] = 0;
                     }
                 })
@@ -71,17 +73,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 let t1List = document.querySelector('#t1');
                 let t1Pad = t1List.querySelector(`[number="${pad.getAttribute('number')}"]`);            
 
+                t1Pad.setAttribute('data-active', 'off');
+
                 t1Pad.addEventListener('click', () => {
-                    if (!t1Pad.classList.contains("on")) {
-                        t1Pad.classList.add("on");
-                        
-
-
+                    if (t1Pad.getAttribute('data-active') === 'off') {
+                        t1Pad.setAttribute('data-active', 'on');
                         playLoop[1][parseInt(pad.getAttribute('number')) - 1] = 1;
+
                         $t1Pad.data("pad").play();
                     } else {
-                        
-                        t1Pad.classList.remove("on");
+                        t1Pad.setAttribute('data-active', 'off');
                         playLoop[1][parseInt(pad.getAttribute('number')) - 1] = 0;
                     }
                 })
@@ -89,18 +90,21 @@ window.addEventListener('DOMContentLoaded', () => {
             case 'tom2':
                 let $t2Pad = $(`ul[id="t2"] > li[number="${pad.getAttribute('number')}"]`);
                 $t2Pad.data('pad', tom2Pad);
-                
+
+
                 let t2List = document.querySelector('#t2');
                 let t2Pad = t2List.querySelector(`[number="${pad.getAttribute('number')}"]`);
+                
+                t2Pad.setAttribute('data-active', 'off');
 
                 t2Pad.addEventListener('click', () => {
-                    if (!t2Pad.classList.contains("on")) {
-                        t2Pad.classList.add("on");
-
+                    if (t2Pad.getAttribute('data-active') === 'off') {
+                        t2Pad.setAttribute('data-active', 'on');
                         playLoop[2][parseInt(pad.getAttribute('number')) - 1] = 1;
+
                         $t2Pad.data("pad").play();
                     } else {
-                        t2Pad.classList.remove("on");
+                        t2Pad.setAttribute('data-active', 'off');
                         playLoop[2][parseInt(pad.getAttribute('number')) - 1] = 0;
                     }
                 })
@@ -112,14 +116,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 let t3List = document.querySelector('#t3');
                 let t3Pad = t3List.querySelector(`[number="${pad.getAttribute('number')}"]`);
 
-                t3Pad.addEventListener('click', () => {
-                    if (!t3Pad.classList.contains("on")) {
-                        t3Pad.classList.add("on");
+                t3Pad.setAttribute('data-active', 'off');
 
+                t3Pad.addEventListener('click', () => {
+                    if (t3Pad.getAttribute('data-active') === 'off') {
+                        t3Pad.setAttribute('data-active', 'on');
                         playLoop[3][parseInt(pad.getAttribute('number')) - 1] = 1;
+
                         $t3Pad.data("pad").play();
                     } else {
-                        t3Pad.classList.remove("on");
+                        t3Pad.setAttribute('data-active', 'off');
                         playLoop[3][parseInt(pad.getAttribute('number')) - 1] = 0;
                     }
                 })
@@ -131,14 +137,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 let t4List = document.querySelector('#t4');
                 let t4Pad = t4List.querySelector(`[number="${pad.getAttribute('number')}"]`);
 
-                t4Pad.addEventListener('click', () => {
-                    if (!t4Pad.classList.contains("on")) {
-                        t4Pad.classList.add("on");
+                t4Pad.setAttribute('data-active', 'off');
 
+                t4Pad.addEventListener('click', () => {
+                    if (t4Pad.getAttribute('data-active') === 'off') {
+                        t4Pad.setAttribute('data-active', 'on');
                         playLoop[4][parseInt(pad.getAttribute('number')) - 1] = 1;
+
                         $t4Pad.data("pad").play();
                     } else {
-                        t4Pad.classList.remove("on");
+                        t4Pad.setAttribute('data-active', 'off');
                         playLoop[4][parseInt(pad.getAttribute('number')) - 1] = 0;
                     }
                 })
@@ -150,14 +158,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 let s1List = document.querySelector('#s1');
                 let s1Pad = s1List.querySelector(`[number="${pad.getAttribute('number')}"]`);
 
-                s1Pad.addEventListener('click', () => {
-                    if (!s1Pad.classList.contains("on")) {
-                        s1Pad.classList.add("on");
+                s1Pad.setAttribute('data-active', 'off');
 
+                s1Pad.addEventListener('click', () => {
+                    if (s1Pad.getAttribute('data-active') === 'off') {
+                        s1Pad.setAttribute('data-active', 'on');
                         playLoop[5][parseInt(pad.getAttribute('number')) - 1] = 1;
+
                         $s1Pad.data("pad").play();
                     } else {
-                        s1Pad.classList.remove("on");
+                        s1Pad.setAttribute('data-active', 'off');
                         playLoop[5][parseInt(pad.getAttribute('number')) - 1] = 0;
                     }
                 })
@@ -166,17 +176,19 @@ window.addEventListener('DOMContentLoaded', () => {
                 let $s2Pad = $(`ul[id="s2"] > li[number="${pad.getAttribute('number')}"]`);
                 $s2Pad.data('pad', snare2Pad);
                 
-                let s2List = document.querySelector('#t2');
+                let s2List = document.querySelector('#s2');
                 let s2Pad = s2List.querySelector(`[number="${pad.getAttribute('number')}"]`);
 
-                s2Pad.addEventListener('click', () => {
-                    if (!s2Pad.classList.contains("on")) {
-                        s2Pad.classList.add("on");
+                s2Pad.setAttribute('data-active', 'off');
 
+                s2Pad.addEventListener('click', () => {
+                    if (s2Pad.getAttribute('data-active') === 'off') {
+                        s2Pad.setAttribute('data-active', 'on');
                         playLoop[6][parseInt(pad.getAttribute('number')) - 1] = 1;
+
                         $s2Pad.data("pad").play();
                     } else {
-                        s2Pad.classList.remove("on");
+                        s2Pad.setAttribute('data-active', 'off');
                         playLoop[6][parseInt(pad.getAttribute('number')) - 1] = 0;
                     }
                 })
@@ -188,14 +200,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 let clList = document.querySelector('#cl');
                 let clPad = clList.querySelector(`[number="${pad.getAttribute('number')}"]`);
 
-                clPad.addEventListener('click', () => {
-                    if (!clPad.classList.contains("on")) {
-                        clPad.classList.add("on");
+                clPad.setAttribute('data-active', 'off');
 
+                clPad.addEventListener('click', () => {
+                    if (clPad.getAttribute('data-active') === 'off') {
+                        clPad.setAttribute('data-active', 'on');
                         playLoop[7][parseInt(pad.getAttribute('number')) - 1] = 1;
+
                         $clPad.data("pad").play();
                     } else {
-                        clPad.classList.remove("on");
+                        clPad.setAttribute('data-active', 'off');
                         playLoop[7][parseInt(pad.getAttribute('number')) - 1] = 0;
                     }
                 })
@@ -207,14 +221,16 @@ window.addEventListener('DOMContentLoaded', () => {
                 let kiList = document.querySelector('#ki');
                 let kiPad = kiList.querySelector(`[number="${pad.getAttribute('number')}"]`);
 
-                kiPad.addEventListener('click', () => {
-                    if (!kiPad.classList.contains("on")) {
-                        kiPad.classList.add("on");
+                kiPad.setAttribute('data-active', 'off');
 
+                kiPad.addEventListener('click', () => {
+                    if (kiPad.getAttribute('data-active') === 'off') {
+                        kiPad.setAttribute('data-active', 'on');
                         playLoop[8][parseInt(pad.getAttribute('number')) - 1] = 1;
+
                         $kiPad.data("pad").play();
                     } else {
-                        kiPad.classList.remove("on");
+                        kiPad.setAttribute('data-active', 'off');
                         playLoop[8][parseInt(pad.getAttribute('number')) - 1] = 0;
                     }
                 })
@@ -226,20 +242,22 @@ window.addEventListener('DOMContentLoaded', () => {
                 let sbList = document.querySelector('#sb');
                 let sbPad = sbList.querySelector(`[number="${pad.getAttribute('number')}"]`);
 
-                sbPad.addEventListener('click', () => {
-                    if (!sbPad.classList.contains("on")) {
-                        sbPad.classList.add("on");
+                sbPad.setAttribute('data-active', 'off');
 
+                sbPad.addEventListener('click', () => {
+                    if (sbPad.getAttribute('data-active') === 'off') {
+                        sbPad.setAttribute('data-active', 'on');
                         playLoop[9][parseInt(pad.getAttribute('number')) - 1] = 1;
+
                         $sbPad.data("pad").play();
                     } else {
-                        sbPad.classList.remove("on");
+                        sbPad.setAttribute('data-active', 'off');
                         playLoop[9][parseInt(pad.getAttribute('number')) - 1] = 0;
                     }
                 })
                 break;
             default:
-                return nil;
+                
         }
     })
     

@@ -1,9 +1,9 @@
 .main-body {
-    width: 1366px;
+    width: 100%;
     height: 1000px;
     display: flex;
     flex-direction: column;
-    // background-color: black;
+    background-size: cover;
     background-image: url('https://raw.githubusercontent.com/chasemlim/beat-pad/master/src/assets/images/background.jpg');
 }
 
@@ -31,7 +31,7 @@
         justify-content: space-between;
     }
 
-    li:nth-child(4n+1) {
+    li:nth-child(4n+1)[data-active=off] {
         background: #ffffff;
         background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #828282 100%);
         background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%, #828282 100%);
@@ -39,7 +39,7 @@
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#828282', GradientType=1);
     }
 
-    .pad {
+    .pad[data-active=off] {
         background: #4c4c4c;
         background: -moz-radial-gradient(center, ellipse cover, #4c4c4c 0%, #6d6d6d 100%);
         background: -webkit-radial-gradient(center, ellipse cover, #4c4c4c 0%, #6d6d6d 100%);
@@ -51,7 +51,7 @@
     //     outline: 5px solid green;
     // }
 
-    #hh > .on {
+    .hihat[data-active=on] {
             background: #fefcea;
             background: -moz-radial-gradient(center, ellipse cover, #fefcea 0%, #f1da36 100%);
             background: -webkit-radial-gradient(center, ellipse cover, #fefcea 0%, #f1da36 100%);
@@ -60,7 +60,7 @@
         }
     
 
-    #t1 > .on, #t2 > .on, #t3 > .on, #t4 > .on {
+    .tom1[data-active=on], .tom2[data-active=on], .tom3[data-active=on], .tom4[data-active=on] {
         background: #e9ffe5;
         background: -moz-radial-gradient(center, ellipse cover, #e9ffe5 0%, #2aff00 100%);
         background: -webkit-radial-gradient(center, ellipse cover, #e9ffe5 0%, #2aff00 100%);
@@ -68,7 +68,7 @@
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9ffe5', endColorstr='#2aff00', GradientType=1);
     }
 
-    #snare1:active, #snare2:active {
+    .snare1[data-active=on], .snare2[data-active=on] {
         background: #87e0fd;
         background: -moz-radial-gradient(center, ellipse cover, #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
         background: -webkit-radial-gradient(center, ellipse cover, #87e0fd 0%, #53cbf1 40%, #05abe0 100%);
@@ -76,7 +76,7 @@
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#87e0fd', endColorstr='#05abe0', GradientType=1);
     }
 
-    #clap:active {
+    .clap[data-active=on] {
         background: #9bdcff;
         background: -moz-radial-gradient(center, ellipse cover, #9bdcff 0%, #008fe2 100%);
         background: -webkit-radial-gradient(center, ellipse cover, #9bdcff 0%, #008fe2 100%);
@@ -84,7 +84,7 @@
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9bdcff', endColorstr='#008fe2', GradientType=1);
     }
 
-    #kick:active {
+    .kick[data-active=on] {
         background: #ffc4bf;
         background: -moz-radial-gradient(center, ellipse cover, #ffc4bf 0%, #fe1818 100%);
         background: -webkit-radial-gradient(center, ellipse cover, #ffc4bf 0%, #fe1818 100%);
@@ -92,7 +92,7 @@
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc4bf', endColorstr='#fe1818', GradientType=1);
     }
 
-    #sub:active {
+    .sub[data-active=on] {
         background: #eec4fc;
         background: -moz-radial-gradient(center, ellipse cover, #eec4fc 0%, #cc30fe 100%);
         background: -webkit-radial-gradient(center, ellipse cover, #eec4fc 0%, #cc30fe 100%);
