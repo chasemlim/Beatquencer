@@ -16,6 +16,32 @@
     font-weight: 600;
 }
 
+.tempo-display {
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    width: 150px;
+    height: 40px;
+    display: flex;
+
+    .tempo-words {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        margin: auto auto 0 auto;
+    }
+
+    #bpm-value {
+        margin-right: 5px;
+        font-size: 30px;
+        text-decoration: underline;
+    }
+
+    .bpm-word {
+        font-size: 25px;
+        margin-bottom: 2px;
+    }
+}
+
 .beat-tempo-div {
     display: flex;
     flex-direction: row;

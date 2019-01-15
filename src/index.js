@@ -11,23 +11,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let playing = true;
 
-    const playPause = document.querySelector('button');
-
-    playPause.addEventListener('click', function () { // creates play button
-
-        if (playPause.getAttribute('data-playing') === 'false') {
-
-            playPause.setAttribute('data-playing', true);
-            playing = true;
-            audioCtx.resume();
-        } else {
-
-            playPause.setAttribute('data-playing', false);
-            playing = false;
-            audioCtx.suspend();
-        }
-    }); 
-
     const hihatPad = new Pad('hihat', audioCtx);
     const tom1Pad = new Pad('tom1', audioCtx);
     const tom2Pad = new Pad('tom2', audioCtx);
@@ -268,8 +251,11 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let tempo = 128;
     const tempoControl = document.querySelector("#tempo");
+    const bpmValue = document.querySelector('#bpm-value');
+
     tempoControl.addEventListener('input', () => {
-        tempo = Number(this.value);
+        tempo = Number(tempoControl.value);
+        bpmValue.innerText = tempo;
     }, false)
 
 
@@ -277,10 +263,10 @@ window.addEventListener('DOMContentLoaded', () => {
     let nextPadTiming = 0.0;
 
     const nextPad = () => {
-        const secondsPerBeat = 60.0 / tempo;
+        const secondsPerBeat = 60.0 / (tempo * 4);
 
         nextPadTiming += secondsPerBeat;
-
+        
         currentPad++;
         if (currentPad == 16) currentPad = 0;
     }
@@ -317,7 +303,38 @@ window.addEventListener('DOMContentLoaded', () => {
         if (playLoop[9][currentPad] === 1) playSample($sbPad.data('pad'));
     }
 
-    const scheduler = () => {
+    let timerID;
+    const lookahead = 25.0;
+    const scheduleAheadTime = 0.1
 
+    const scheduler = () => {
+        while (nextPadTiming < audioCtx.currentTime + scheduleAheadTime) {
+            schedulePad(currentPad, nextPadTiming);
+            nextPad();
+        }
+        timerID = window.setTimeout(scheduler, lookahead);
     }
+
+    const playPause = document.querySelector('button');
+
+    playPause.addEventListener('click', function () { // creates play button
+
+        if (playPause.getAttribute('data-playing') === 'false') {
+
+            playPause.setAttribute('data-playing', true);
+            playing = true;
+            audioCtx.resume();
+
+            currentPad = 0;
+            nextPadTiming = audioCtx.currentTime;
+            scheduler();        
+        } else {
+            window.clearTimeout(timerID);
+
+            playPause.setAttribute('data-playing', false);
+            playing = false;       
+        }
+    }); 
+
+    //NEED TO CLEAN ATTACK OF SAMPLES
 })
