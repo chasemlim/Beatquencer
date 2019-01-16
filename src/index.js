@@ -264,7 +264,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const nextPad = () => {
         const secondsPerBeat = 60.0 / (tempo * 4);
-
+        
         nextPadTiming += secondsPerBeat;
         
         currentPad++;
