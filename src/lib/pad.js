@@ -36,7 +36,7 @@ export default class Pad {
             default:
                 return './src/assets/audio/drums.wav';
         }
-    }
+    } //
 
     async getFile(audioCtx, filepath) { // this works now
         const res = await fetch(filepath);
