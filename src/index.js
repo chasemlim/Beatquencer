@@ -287,6 +287,24 @@ window.addEventListener('DOMContentLoaded', () => {
         let $kiPad = $(`ul[id="ki"] > li[number="${currentPad + 1}"]`);
         let $sbPad = $(`ul[id="sb"] > li[number="${currentPad + 1}"]`);
 
+        let prevPads;
+
+        if (currentPad === 0) {
+            prevPads = document.querySelectorAll(`ul > li[number="16"]`);
+        } else {
+            prevPads = document.querySelectorAll(`ul > li[number="${currentPad}"]`);
+        }
+        
+        let lightUpPads = document.querySelectorAll(`ul > li[number="${currentPad + 1}"]`);
+
+        prevPads.forEach(pad => {
+            pad.classList.remove('beat-active');
+        })
+
+        lightUpPads.forEach(pad => {
+            pad.classList.add('beat-active');
+        });
+
         if (playLoop[0][currentPad] === 1) playSample($hhPad.data('pad'));
         if (playLoop[1][currentPad] === 1) playSample($t1Pad.data('pad'));
         if (playLoop[2][currentPad] === 1) playSample($t2Pad.data('pad'));
@@ -319,9 +337,9 @@ window.addEventListener('DOMContentLoaded', () => {
     //     let drawPad = lastPadDrawn;
     //     const currentTime = audioCtx.currentTime;
 
-    //     while (padQueue.length && padQueue[0].time < currentTime) {
+    //     while (padQueue.length && (padQueue[0].time < currentTime)) {
     //         drawPad = padQueue[0].pad;
-    //         padQueue.shift;
+    //         padQueue.shift;     
     //     }
 
     //     if (lastPadDrawn !== drawPad) {
@@ -360,8 +378,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
             currentPad = 0;
             nextPadTiming = audioCtx.currentTime;
-            scheduler();
             // requestAnimationFrame(draw);
+            scheduler();
         } else {
             window.clearTimeout(timerID);
 

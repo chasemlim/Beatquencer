@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     background-size: cover;
-    background-image: url('https://raw.githubusercontent.com/chasemlim/beat-pad/master/src/assets/images/background.jpg');
+    // background-image: url('https://raw.githubusercontent.com/chasemlim/beat-pad/master/src/assets/images/background.jpg');
+    background-color: black;
     background-position: center;
 }
 
@@ -148,13 +149,15 @@
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eec4fc', endColorstr='#cc30fe', GradientType=1);
     }
 
-    .beat-active {
-        background: #e2e2e2;
-        background: -moz-radial-gradient(center, ellipse cover, #e2e2e2 0%, #ffffff 100%);
-        background: -webkit-radial-gradient(center, ellipse cover, #e2e2e2 0%, #ffffff 100%);
-        background: radial-gradient(ellipse at center, #e2e2e2 0%, #ffffff 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#ffffff', GradientType=1);
-    }
+}
+
+.beat-pad ul .beat-active {
+    // background: #e2e2e2;
+    // background: -moz-radial-gradient(center, ellipse cover, #e2e2e2 0%, #ffffff 100%);
+    // background: -webkit-radial-gradient(center, ellipse cover, #e2e2e2 0%, #ffffff 100%);
+    // background: radial-gradient(ellipse at center, #e2e2e2 0%, #ffffff 100%);
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#ffffff', GradientType=1);
+    border: 5px solid white;
 }
 
 .pad {
