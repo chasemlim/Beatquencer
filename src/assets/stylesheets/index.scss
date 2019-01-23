@@ -60,13 +60,13 @@
     display: flex;
     flex-direction: row;
     width: 1000px;
-    height: 560px;
+    height: 570px;
     margin: 0 auto;
 }
 
 .beat-pad {
     width: 1000px;
-    height: 560px;
+    height: 570px;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -157,7 +157,7 @@
     // background: -webkit-radial-gradient(center, ellipse cover, #e2e2e2 0%, #ffffff 100%);
     // background: radial-gradient(ellipse at center, #e2e2e2 0%, #ffffff 100%);
     // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e2e2e2', endColorstr='#ffffff', GradientType=1);
-    border: 5px solid white;
+    border: 2px solid white;
 }
 
 .pad {

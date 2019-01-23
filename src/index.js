@@ -330,31 +330,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // let lastPadDrawn = 15;
-    // let pads = document.querySelectorAll('ul');
-
-    // const draw = () => {
-    //     let drawPad = lastPadDrawn;
-    //     const currentTime = audioCtx.currentTime;
-
-    //     while (padQueue.length && (padQueue[0].time < currentTime)) {
-    //         drawPad = padQueue[0].pad;
-    //         padQueue.shift;     
-    //     }
-
-    //     if (lastPadDrawn !== drawPad) {
-    //         pads.forEach(ul => {
-    //             ul.children[lastPadDrawn].classList.remove('beat-active');
-    //             ul.children[drawPad].classList.add('beat-active');
-    //         })
-
-    //         lastPadDrawn = drawPad;
-    //     }
-
-    //     requestAnimationFrame(draw);
-    // }
-
-
     const playPause = document.querySelector('i');
 
     const switchIcon = (button) => {
@@ -376,9 +351,18 @@ window.addEventListener('DOMContentLoaded', () => {
             playing = true;
             audioCtx.resume();
 
+            let litPads = document.querySelectorAll('.beat-active');
+            
+            console.log(litPads);
+            
+
+            for (let i = 0; i < litPads.length; i++) {
+                litPads[i].classList.remove('.beat-active');
+            }
+
             currentPad = 0;
             nextPadTiming = audioCtx.currentTime;
-            // requestAnimationFrame(draw);
+
             scheduler();
         } else {
             window.clearTimeout(timerID);
