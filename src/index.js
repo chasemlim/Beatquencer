@@ -342,6 +342,14 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+
+    const removeLitPads = (pads) => {
+        pads.forEach(pad => {
+            pad.classList.remove('.beat-active');
+        })
+    }
+
+
     playPause.addEventListener('click', function () { // creates play button
 
         if (playPause.getAttribute('data-playing') === 'false') {
@@ -353,12 +361,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             let litPads = document.querySelectorAll('.beat-active');
             
-            console.log(litPads);
-            
-
-            for (let i = 0; i < litPads.length; i++) {
-                litPads[i].classList.remove('.beat-active');
-            }
+            removeLitPads(litPads);
 
             currentPad = 0;
             nextPadTiming = audioCtx.currentTime;
