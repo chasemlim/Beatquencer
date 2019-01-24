@@ -31,8 +31,6 @@ export default class Pad {
                 return 'src/assets/audio/clap.wav';
             case 'kick':
                 return 'src/assets/audio/kick.wav';
-            case 'sub':
-                return 'src/assets/audio/subbass.wav';
             default:
                 return 'src/assets/audio/drums.wav';
         }

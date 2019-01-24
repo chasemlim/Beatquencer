@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const liList = document.querySelectorAll('li');
 
-    let playLoop = Array.apply(null, Array(10)).map(() => { return Array.apply(null, Array(16)).map(() => { return 0 }) });
+    let playLoop = Array.apply(null, Array(9)).map(() => { return Array.apply(null, Array(16)).map(() => { return 0 }) });
 
     liList.forEach((pad) => {
         switch (pad.getAttribute('padType')) {
@@ -218,27 +218,6 @@ window.addEventListener('DOMContentLoaded', () => {
                     }
                 })
                 break;
-            case 'sub':
-                let $sbPad = $(`ul[id="sb"] > li[number="${pad.getAttribute('number')}"]`);
-                $sbPad.data('pad', subPad);
-                
-                let sbList = document.querySelector('#sb');
-                let sbPad = sbList.querySelector(`[number="${pad.getAttribute('number')}"]`);
-
-                sbPad.setAttribute('data-active', 'off');
-
-                sbPad.addEventListener('click', () => {
-                    if (sbPad.getAttribute('data-active') === 'off') {
-                        sbPad.setAttribute('data-active', 'on');
-                        playLoop[9][parseInt(pad.getAttribute('number')) - 1] = 1;
-
-                        $sbPad.data("pad").play();
-                    } else {
-                        sbPad.setAttribute('data-active', 'off');
-                        playLoop[9][parseInt(pad.getAttribute('number')) - 1] = 0;
-                    }
-                })
-                break;
             default:
                 
         }
@@ -285,7 +264,6 @@ window.addEventListener('DOMContentLoaded', () => {
         let $s2Pad = $(`ul[id="s2"] > li[number="${currentPad + 1}"]`);
         let $clPad = $(`ul[id="cl"] > li[number="${currentPad + 1}"]`);
         let $kiPad = $(`ul[id="ki"] > li[number="${currentPad + 1}"]`);
-        let $sbPad = $(`ul[id="sb"] > li[number="${currentPad + 1}"]`);
 
         let prevPads;
 
@@ -314,7 +292,6 @@ window.addEventListener('DOMContentLoaded', () => {
         if (playLoop[6][currentPad] === 1) playSample($s2Pad.data('pad'));
         if (playLoop[7][currentPad] === 1) playSample($clPad.data('pad'));
         if (playLoop[8][currentPad] === 1) playSample($kiPad.data('pad'));
-        if (playLoop[9][currentPad] === 1) playSample($sbPad.data('pad'));
     }
 
     let timerID;
@@ -349,6 +326,19 @@ window.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+
+    const lightShow = () => {
+        let i = 0;
+        while (i < 16) {
+            let horizontal = document.querySelectorAll(`ul > li[number="${i}"]`);
+            console.log(horizontal);
+            
+            i++;
+        }
+        
+    }
+
+    lightShow()
 
     playPause.addEventListener('click', function () { // creates play button
 
