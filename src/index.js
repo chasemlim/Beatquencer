@@ -327,44 +327,49 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // const lightShow = () => {
-    //     let i = 0;
-    //     // while (i < 16) {
-    //     //     let horizontal = document.querySelectorAll(`ul > li[number="${i + 1}"]`);
-    //     //     let previous = document.querySelectorAll(`ul > li[number="${i}"]`);
+    const lightShow = () => {
+        let i = 0;
+        // while (i < 16) {
+        //     let horizontal = document.querySelectorAll(`ul > li[number="${i + 1}"]`);
+        //     let previous = document.querySelectorAll(`ul > li[number="${i}"]`);
 
-    //     //     horizontal.forEach((pad) => {
-    //     //         pad.setAttribute('data-active', 'on');
-    //     //     })
+        //     horizontal.forEach((pad) => {
+        //         pad.setAttribute('data-active', 'on');
+        //     })
 
             
-    //     //     i++;
-    //     // }
+        //     i++;
+        // }
         
-    //     let timerId = setTimeout(function rows(i = 0) {
-    //         let horizontal = document.querySelectorAll(`ul > li[number="${i + 1}"]`);
-    //         let previous = document.querySelectorAll(`ul > li[number="${i}"]`);
+        let rows = (i = 0) => {
 
-    //         if (i < 16) {
-    //             horizontal.forEach((pad) => {
-    //                 pad.setAttribute('data-active', 'on');
-    //             })
+            let timerId = setTimeout(() => {
+                let horizontal = document.querySelectorAll(`ul > li[number="${i + 1}"]`);
+                let previous = document.querySelectorAll(`ul > li[number="${i - 15}"]`);
 
-    //             previous.forEach((pad) => {
-    //                 pad.setAttribute('data-active', 'off');
-    //             })
+                if (i < 32) {
+                    horizontal.forEach((pad) => {
+                        pad.setAttribute('data-active', 'on');
+                    })
 
-    //             i++;
+                    previous.forEach((pad) => {
+                        pad.setAttribute('data-active', 'off');
+                    })
 
-    //             timerId = setTimeout(rows(i), 1000);
-    //         } else {
-    //             clearTimeout(timerId);
-    //         }
-    //     }, 1000);
+                    i++;
 
-    // }
+                    rows(i);
+                } else {
+                    clearTimeout(timerId);
+                }
+            }, 60);
 
-    // lightShow()
+            
+        };
+        rows();
+    }
+
+    lightShow();
 
     playPause.addEventListener('click', function () { // creates play button
 
