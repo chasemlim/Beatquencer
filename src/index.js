@@ -327,18 +327,44 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    const lightShow = () => {
-        let i = 0;
-        while (i < 16) {
-            let horizontal = document.querySelectorAll(`ul > li[number="${i}"]`);
-            console.log(horizontal);
-            
-            i++;
-        }
-        
-    }
+    // const lightShow = () => {
+    //     let i = 0;
+    //     // while (i < 16) {
+    //     //     let horizontal = document.querySelectorAll(`ul > li[number="${i + 1}"]`);
+    //     //     let previous = document.querySelectorAll(`ul > li[number="${i}"]`);
 
-    lightShow()
+    //     //     horizontal.forEach((pad) => {
+    //     //         pad.setAttribute('data-active', 'on');
+    //     //     })
+
+            
+    //     //     i++;
+    //     // }
+        
+    //     let timerId = setTimeout(function rows(i = 0) {
+    //         let horizontal = document.querySelectorAll(`ul > li[number="${i + 1}"]`);
+    //         let previous = document.querySelectorAll(`ul > li[number="${i}"]`);
+
+    //         if (i < 16) {
+    //             horizontal.forEach((pad) => {
+    //                 pad.setAttribute('data-active', 'on');
+    //             })
+
+    //             previous.forEach((pad) => {
+    //                 pad.setAttribute('data-active', 'off');
+    //             })
+
+    //             i++;
+
+    //             timerId = setTimeout(rows(i), 1000);
+    //         } else {
+    //             clearTimeout(timerId);
+    //         }
+    //     }, 1000);
+
+    // }
+
+    // lightShow()
 
     playPause.addEventListener('click', function () { // creates play button
 
