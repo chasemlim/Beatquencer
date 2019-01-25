@@ -328,20 +328,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
     const lightShow = () => {
-        let i = 0;
-        // while (i < 16) {
-        //     let horizontal = document.querySelectorAll(`ul > li[number="${i + 1}"]`);
-        //     let previous = document.querySelectorAll(`ul > li[number="${i}"]`);
 
-        //     horizontal.forEach((pad) => {
-        //         pad.setAttribute('data-active', 'on');
-        //     })
-
-            
-        //     i++;
-        // }
-        
-        let rows = (i = 0) => {
+        let lightCols = (i = 0) => {
 
             let timerId = setTimeout(() => {
                 let horizontal = document.querySelectorAll(`ul > li[number="${i + 1}"]`);
@@ -358,15 +346,58 @@ window.addEventListener('DOMContentLoaded', () => {
 
                     i++;
 
-                    rows(i);
+                    lightCols(i);
                 } else {
                     clearTimeout(timerId);
                 }
-            }, 60);
+            }, 35);
 
             
         };
-        rows();
+
+        let lightRows = (i = 0) => {
+
+            let ulIds = [
+                'hh',
+                't1',
+                't2',
+                't3',
+                't4',
+                's1',
+                's2',
+                'cl',
+                'ki'
+            ];
+
+            let timerId = setTimeout(() => {
+                let vertical = document.querySelectorAll(`ul[id='${ulIds[i]}']`);
+                let previous = document.querySelectorAll(`ul[id='${ulIds[i - 9]}']`);
+                
+                if (i < 18) {
+                    if (vertical.length !== 0) {
+                        Array.from(vertical[0].children).forEach((pad) => {
+                            pad.setAttribute('data-active', 'on');
+                        })
+                    }
+
+                    if (previous.length !== 0) {
+                        Array.from(previous[0].children).forEach((pad) => {
+                            pad.setAttribute('data-active', 'off');
+                        })
+                    }
+
+
+                    i++;
+
+                    lightRows(i);
+                } else {
+                    clearTimeout(timerId);
+                }
+            }, 35);
+        }
+
+        lightCols();
+        setTimeout(() => lightRows(), 1240);
     }
 
     lightShow();
