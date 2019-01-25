@@ -329,6 +329,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const lightShow = () => {
 
+        let ulIds = [
+            'hh',
+            't1',
+            't2',
+            't3',
+            't4',
+            's1',
+            's2',
+            'cl',
+            'ki'
+        ];
+        
         let lightCols = (i = 0) => {
 
             let timerId = setTimeout(() => {
@@ -350,24 +362,10 @@ window.addEventListener('DOMContentLoaded', () => {
                 } else {
                     clearTimeout(timerId);
                 }
-            }, 35);
-
-            
+            }, 28);    
         };
 
         let lightRows = (i = 0) => {
-
-            let ulIds = [
-                'hh',
-                't1',
-                't2',
-                't3',
-                't4',
-                's1',
-                's2',
-                'cl',
-                'ki'
-            ];
 
             let timerId = setTimeout(() => {
                 let vertical = document.querySelectorAll(`ul[id='${ulIds[i]}']`);
@@ -394,10 +392,41 @@ window.addEventListener('DOMContentLoaded', () => {
                     clearTimeout(timerId);
                 }
             }, 35);
+        };
+
+        let diagonal1 = (ulIdx = 0, colIdx = 1) => {
+
+            let timerId = setTimeout(() => {
+                let vertical = document.querySelectorAll(`ul[id='${ulIds[ulIdx]}']`);
+
+                if (ulIdx < 9) {
+                    let padarr = Array.from(vertical[0].children);
+
+                    for (let i = 0; i <= colIdx; i++) {
+                        padarr[i].setAttribute('data-active', 'on');
+                    }
+
+                    ulIdx++;
+
+                    if ((ulIdx % 2) === 1) {
+                        colIdx++;
+                    } else {
+                        colIdx = colIdx + 2;
+                    }
+
+                    diagonal(ulIdx, colIdx);
+                } else {
+                    clearTimeout(timerId);
+                }
+            }, 40);
         }
 
-        lightCols();
-        setTimeout(() => lightRows(), 1240);
+        let diagonal2
+
+        diagonal1();
+
+        // lightCols();
+        // setTimeout(() => lightRows(), 1090);
     }
 
     lightShow();
