@@ -1,3 +1,23 @@
+@-webkit-keyframes slideIn {
+  from {top: 400px; } 
+  to {top: 0px; }
+}
+
+@keyframes slideIn {
+  from {top: 400px; }
+  to {top: 0px; }
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
 li {
     box-sizing: border-box;
 }
@@ -14,11 +34,28 @@ li {
 }
 
 .title {
-    margin: 20px auto 50px auto;
+    margin: auto;
     color: white;
     font-size: 60px;
     font-family: 'Orbitron', sans-serif;
     font-weight: 600;
+    -webkit-animation-name: fadeIn;
+    -webkit-animation-duration: 1s;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+.title-div {
+    display: flex;
+    width: 500px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 1s;
+    animation-name: slideIn;
+    animation-duration: 1s;
+    z-index: 20;
 }
 
 .tempo-display {

@@ -504,14 +504,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
         }
 
-        lightCols();
-        setTimeout(() => lightRows(), 1090);
-        setTimeout(() => diagonal1(), 1580);
-        setTimeout(() => diagonal2(), 1940);
+        setTimeout(() => lightCols(), 1100);
+        setTimeout(() => lightRows(), 2190);
+        setTimeout(() => diagonal1(), 2680);
+        setTimeout(() => diagonal2(), 3040);
         setTimeout(() => {
             diagonal1Clear(); 
             diagonal2Clear();
-        }, 2400);
+        }, 3500);
     }
 
     lightShow();
