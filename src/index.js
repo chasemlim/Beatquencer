@@ -414,19 +414,104 @@ window.addEventListener('DOMContentLoaded', () => {
                         colIdx = colIdx + 2;
                     }
 
-                    diagonal(ulIdx, colIdx);
+                    diagonal1(ulIdx, colIdx);
                 } else {
                     clearTimeout(timerId);
                 }
             }, 40);
         }
 
-        let diagonal2
+        let diagonal2 = (ulIdx = 8, colIdx = 13) => {
 
-        diagonal1();
+            let timerId = setTimeout(() => {
+                let vertical = document.querySelectorAll(`ul[id='${ulIds[ulIdx]}']`);
 
-        // lightCols();
-        // setTimeout(() => lightRows(), 1090);
+                if (ulIdx >= 0) {
+                    let padarr = Array.from(vertical[0].children);
+
+                    for (let i = 15; i > colIdx; i--) {
+                        padarr[i].setAttribute('data-active', 'on');
+                    }
+
+                    ulIdx--;
+
+                    if ((ulIdx % 2) === 0) {
+                        colIdx--;
+                    } else {
+                        colIdx = colIdx - 2;
+                    }
+
+                    diagonal2(ulIdx, colIdx);
+                } else {
+                    clearTimeout(timerId);
+                }
+            }, 40);
+
+        }
+
+        let diagonal1Clear = (ulIdx = 8, colIdx = 13) => {
+
+            let timerId = setTimeout(() => {
+                let vertical = document.querySelectorAll(`ul[id='${ulIds[ulIdx]}']`);
+
+                if (ulIdx >= 0) {
+                    let padarr = Array.from(vertical[0].children);
+
+                    for (let i = 0; i <= colIdx; i++) {
+                        padarr[i].setAttribute('data-active', 'off');
+                    }
+
+                    ulIdx--;
+
+                    if ((ulIdx % 2) === 0) {
+                        colIdx = colIdx - 2;
+                    } else {
+                        colIdx--;
+                    }
+
+                    diagonal1Clear(ulIdx, colIdx);
+                } else {
+                    clearTimeout(timerId);
+                }
+            }, 40);
+        };
+
+        let diagonal2Clear = (ulIdx = 0, colIdx = 2) => {
+
+            let timerId = setTimeout(() => {
+                let vertical = document.querySelectorAll(`ul[id='${ulIds[ulIdx]}']`);
+
+                if (ulIdx < 9) {
+                    let padarr = Array.from(vertical[0].children);
+
+                    for (let i = colIdx; i < 16; i++) {
+                        padarr[i].setAttribute('data-active', 'off');
+                    }
+
+                    ulIdx++;
+
+                    if ((ulIdx % 2) === 0) {
+                        colIdx = colIdx + 2;
+                    } else {
+                        colIdx++;
+                    }
+
+                    diagonal2Clear(ulIdx, colIdx);
+                } else {
+                    clearTimeout(timerId);
+                }
+            }, 40);
+
+        }
+
+        lightCols();
+        setTimeout(() => lightRows(), 1090);
+        setTimeout(() => diagonal1(), 1580);
+        setTimeout(() => diagonal2(), 1940);
+        setTimeout(() => {
+            diagonal1Clear(); 
+            diagonal2Clear();
+        }, 2400);
     }
 
     lightShow();
