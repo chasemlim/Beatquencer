@@ -20,7 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const snare2Pad = new Pad('snare2', audioCtx);
     const clapPad = new Pad('clap', audioCtx);
     const kickPad = new Pad('kick', audioCtx);
-    const subPad = new Pad('sub', audioCtx);
 
     const liList = document.querySelectorAll('li');
 
@@ -320,7 +319,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    const removeLitPads = (pads) => {
+    const removeLitPads = (pads) => { // doesn't work atm?
         pads.forEach(pad => {
             pad.classList.remove('.beat-active');
         })
@@ -501,7 +500,6 @@ window.addEventListener('DOMContentLoaded', () => {
                     clearTimeout(timerId);
                 }
             }, 40);
-
         }
 
         setTimeout(() => lightCols(), 1100);
@@ -515,6 +513,47 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     lightShow();
+
+    const initializeBoard = (sampleLoop = [
+            [1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+            [1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+        ]
+        ) => {
+
+        let ulIds = [
+            'hh',
+            't1',
+            't2',
+            't3',
+            't4',
+            's1',
+            's2',
+            'cl',
+            'ki'
+        ];
+
+        playLoop = sampleLoop;
+
+        for (let i = 0; i < ulIds.length; i++) {
+            let vertical = document.querySelectorAll(`ul[id='${ulIds[i]}']`);
+            let padarr = Array.from(vertical[0].children);
+
+            for (let j = 0; j < 16; j++) {
+                if (sampleLoop[i][j] === 1) {
+                    padarr[j].setAttribute('data-active', 'on');
+                }
+            }
+        }
+    }
+
+    setTimeout(() => initializeBoard(), 4200);
 
     playPause.addEventListener('click', function () { // creates play button
 
@@ -540,7 +579,5 @@ window.addEventListener('DOMContentLoaded', () => {
             playPause.setAttribute('data-playing', false);
             playing = false;       
         }
-    }); 
-
-    //NEED TO CLEAN ATTACK OF SAMPLES
-})
+    });
+});
