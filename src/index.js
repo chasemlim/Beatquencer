@@ -254,6 +254,13 @@ window.addEventListener('DOMContentLoaded', () => {
     }, false)
 
 
+    const changeTempo = (newTempo) => {
+        tempo = newTempo;
+        tempoControl.value = tempo;
+        bpmValue.innerText = tempo;
+    }
+
+
     let currentPad = 0;
     let nextPadTiming = 0.0;
 
@@ -602,6 +609,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
     sample1.addEventListener('click', () => {
         clearBoard();
+        changeTempo(100);
         initializeBoard([
             [0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1],
             [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
@@ -617,6 +625,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     sample2.addEventListener('click', () => {
         clearBoard();
+        changeTempo(100);
         initializeBoard([
             [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -632,6 +641,7 @@ window.addEventListener('DOMContentLoaded', () => {
     
     sample3.addEventListener('click', () => {
         clearBoard();
+        changeTempo(100);
         initializeBoard([
             [0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
