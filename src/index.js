@@ -5,6 +5,9 @@ import './assets/stylesheets/index.scss';
 window.addEventListener('DOMContentLoaded', () => {
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     const audioCtx = new AudioContext();
+    // const gainNode = audioCtx.createGain();
+    // gainNode.connect(audioCtx.destination);
+    // const source = audioCtx.createMediaStreamSource(stream);
     audioCtx.suspend(); // AudioContext resume once user presses a button
 
     const board = new Board(audioCtx);
@@ -25,6 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     let playLoop = Array.apply(null, Array(9)).map(() => { return Array.apply(null, Array(16)).map(() => { return 0 }) });
 
+    // Adding event listeners to all drum pads and initialize board
     liList.forEach((pad) => {
         switch (pad.getAttribute('padType')) {
             case 'hihat':
@@ -222,7 +226,20 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     })
     
+    // Initialize mute button and event listener
+    // const mute = document.querySelector('.mute-button');
+
+    // mute.addEventListener('click', () => {
+    //     if (mute.id == "") {
+    //         gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+    //         mute.id = "muted";
+    //     } else {
+    //         gainNode.gain.setValueAtTime(1, audioCtx.currentTime);
+    //         mute.id = "";
+    //     }
+    // });
     
+
     const playSample = (pad) => {
         pad.play();
     }
@@ -306,7 +323,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    const playPause = document.querySelector('i');
+    const playPause = document.querySelector('.play-pause-button');
 
     const switchIcon = (button) => {
         if (button.classList.contains('fa-play')) {

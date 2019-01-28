@@ -387,8 +387,9 @@ input[type=range]::-ms-fill-upper {
 
 .play-div {
     height: 100px;
-    width: 100px;
+    width: 685px;
     display: flex;
+    justify-content: space-between;
     margin: 0 auto 10px auto;
 }
 
@@ -396,8 +397,43 @@ input[type=range]::-ms-fill-upper {
     height: 41px;
     width: 36px;
     color: white;
-    margin: auto;
+    align-self: center;
     font-size: 40px;
+}
+
+.mute-button {
+    height: 39px;
+    width: 46px;
+    color: white;
+    font-size: 40px;
+    align-self: center;
+    // justify-self: flex-end;
+}
+
+.github-button {
+    height: 40px;
+    width: 40px;
+    color: #a1a1a1;
+    font-size: 40px;
+    align-self: center;
+    // justify-self: flex-start;
+}
+
+.linkedin-button {
+    height: 40px;
+    width: 40px;
+    color: #a1a1a1;
+    font-size: 40px;
+    align-self: center;
+}
+
+.play-pause-button:hover {
+    cursor: pointer;
+}
+
+.github-button:hover, .linkedin-button:hover {
+    cursor: pointer;
+    color: white;
 }
 
 .sample-div {
