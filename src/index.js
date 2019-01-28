@@ -318,13 +318,31 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    playPause.addEventListener('click', function () { // creates play button
 
-    const removeLitPads = (pads) => { // doesn't work atm?
-        pads.forEach(pad => {
-            pad.classList.remove('.beat-active');
-        })
-    }
+        if (playPause.getAttribute('data-playing') === 'false') {
 
+            switchIcon(playPause);
+            playPause.setAttribute('data-playing', true);
+            playing = true;
+            audioCtx.resume();
+
+            let litPads = document.querySelectorAll('.beat-active');
+
+            removeLitPads(litPads);
+
+            currentPad = 0;
+            nextPadTiming = audioCtx.currentTime;
+
+            scheduler();
+        } else {
+            window.clearTimeout(timerID);
+
+            switchIcon(playPause);
+            playPause.setAttribute('data-playing', false);
+            playing = false;
+        }
+    });
 
     const lightShow = () => {
 
@@ -555,29 +573,48 @@ window.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => initializeBoard(), 4200);
 
-    playPause.addEventListener('click', function () { // creates play button
 
-        if (playPause.getAttribute('data-playing') === 'false') {
+    const clearBoard = () => {
+        document.querySelectorAll('.pad').forEach((pad) => {
+            if (pad.getAttribute('data-active', 'on')) {
+                pad.setAttribute('data-active', 'off');
+            }
+        })
+    }
 
-            switchIcon(playPause);
-            playPause.setAttribute('data-playing', true);
-            playing = true;
-            audioCtx.resume();
 
-            let litPads = document.querySelectorAll('.beat-active');
-            
-            removeLitPads(litPads);
-
-            currentPad = 0;
-            nextPadTiming = audioCtx.currentTime;
-
-            scheduler();
-        } else {
-            window.clearTimeout(timerID);
-
-            switchIcon(playPause);
-            playPause.setAttribute('data-playing', false);
-            playing = false;       
-        }
+    const sample1 = document.querySelector('.beat1');
+    const sample2 = document.querySelector('.beat2');
+    const sample3 = document.querySelector('.beat3');
+    
+    sample1.addEventListener('click', () => {
+        clearBoard();
+        initializeBoard([
+            [0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+            [0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+        ]);
     });
+
+    sample2.addEventListener('click', () => {
+        clearBoard();
+        initializeBoard([
+            [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0],
+            [1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0],
+        ]);
+    });
+    
 });

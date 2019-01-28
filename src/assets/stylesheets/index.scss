@@ -182,13 +182,13 @@ li {
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc4bf', endColorstr='#fe1818', GradientType=1);
     }
 
-    .sub[data-active=on] {
-        background: #eec4fc;
-        background: -moz-radial-gradient(center, ellipse cover, #eec4fc 0%, #cc30fe 100%);
-        background: -webkit-radial-gradient(center, ellipse cover, #eec4fc 0%, #cc30fe 100%);
-        background: radial-gradient(ellipse at center, #eec4fc 0%, #cc30fe 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eec4fc', endColorstr='#cc30fe', GradientType=1);
-    }
+    // .sub[data-active=on] {
+    //     background: #eec4fc;
+    //     background: -moz-radial-gradient(center, ellipse cover, #eec4fc 0%, #cc30fe 100%);
+    //     background: -webkit-radial-gradient(center, ellipse cover, #eec4fc 0%, #cc30fe 100%);
+    //     background: radial-gradient(ellipse at center, #eec4fc 0%, #cc30fe 100%);
+    //     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eec4fc', endColorstr='#cc30fe', GradientType=1);
+    // }
 
 }
 
@@ -369,7 +369,7 @@ input[type=range]::-ms-fill-upper {
     height: 100px;
     width: 100px;
     display: flex;
-    margin: 10px auto auto auto;
+    margin: 10px auto 20px auto;
 }
 
 .play-pause-button {
@@ -378,4 +378,46 @@ input[type=range]::-ms-fill-upper {
     color: white;
     margin: auto;
     font-size: 40px;
+}
+
+.sample-div {
+    width: 840px;
+    height: 70px;
+    margin: 0 auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sample-button {
+    width: 200px;
+    border-radius: 10px;
+    background-color: transparent;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+}
+
+.sample-button:focus {
+    outline: 0;
+}
+
+.sample-button:hover {
+    cursor: pointer;
+    border-color: white;
+    color: white;
+}
+
+.beat1 {
+    border: 2px solid #f1da36;
+    color: #f1da36;
+}
+
+.beat2 {
+    border: 2px solid #05abe0;
+    color: #05abe0;
+}
+
+.beat3 {
+    border: 2px solid #fe1818;
+    color: #fe1818;
 }
