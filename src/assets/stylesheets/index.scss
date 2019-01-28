@@ -49,13 +49,40 @@ li {
     display: flex;
     width: 500px;
     height: 100px;
-    margin: 0 auto;
+    margin: 0 auto -41px auto;
     position: relative;
     -webkit-animation-name: slideIn;
     -webkit-animation-duration: 1s;
     animation-name: slideIn;
     animation-duration: 1s;
     z-index: 20;
+}
+
+.clear-div {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    position: relative;
+    right: -89px;
+    top: 49px;
+
+    .clear-button {
+        margin: auto;
+        width: 80px;
+        height: 40px;
+        background-color: transparent;
+        color: white;
+        border: 2px solid #828282;
+        border-radius: 5px;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 17px;
+    }
+
+    .clear-button:hover {
+        cursor: pointer;
+        border-color: white;
+        color: white;
+    }
 }
 
 .tempo-display {
@@ -67,8 +94,6 @@ li {
     margin: 0 0 4px 0;
     position: relative;
     left: 760px;
-    // top: 50px;
-    // z-index: 5;
 
     .tempo-words {
         display: flex;
@@ -93,7 +118,7 @@ li {
     display: flex;
     flex-direction: column;
     width: 1000px;
-    height: 555px;
+    height: 604px;
     margin: 0 auto;
 }
 
@@ -137,10 +162,6 @@ li {
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4c4c4c', endColorstr='#6d6d6d', GradientType=1);
     }
 
-    // .pad:nth-child(16n+2) {          Logic to increment the progress bar
-    //     outline: 5px solid green;
-    // }
-
     .hihat[data-active=on] {
             background: #fefcea;
             background: -moz-radial-gradient(center, ellipse cover, #fefcea 0%, #f1da36 100%);
@@ -148,7 +169,6 @@ li {
             background: radial-gradient(ellipse at center, #fefcea 0%, #f1da36 100%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fefcea', endColorstr='#f1da36', GradientType=1);
         }
-    
 
     .tom1[data-active=on], .tom2[data-active=on], .tom3[data-active=on], .tom4[data-active=on] {
         background: #e9ffe5;
@@ -369,7 +389,7 @@ input[type=range]::-ms-fill-upper {
     height: 100px;
     width: 100px;
     display: flex;
-    margin: 10px auto 20px auto;
+    margin: 0 auto 10px auto;
 }
 
 .play-pause-button {
