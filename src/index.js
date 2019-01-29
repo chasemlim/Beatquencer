@@ -351,6 +351,10 @@ window.addEventListener('DOMContentLoaded', () => {
             playing = true;
             audioCtx.resume();
 
+            document.querySelectorAll('.beat-active').forEach(pad => {
+                pad.classList.remove('beat-active');
+            })
+
             currentPad = 0;
             nextPadTiming = audioCtx.currentTime;
 
