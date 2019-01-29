@@ -684,13 +684,17 @@ window.addEventListener('DOMContentLoaded', () => {
     instructions.addEventListener('click', () => {
         if (modalBackground.classList.contains('hidden')) {
             modalBackground.classList.remove('hidden');
-
-            modalBackground.addEventListener('click', () => {
-                modalBackground.classList.add('closing-background');
-                modal.classList.add('closing-modal');
-            });
         }
     });
 
+    modalBackground.addEventListener('click', () => {
+        modalBackground.classList.add('closing-background');
+        modal.classList.add('closing-modal');
 
+        setTimeout(() => {
+            modalBackground.classList.remove('closing-background');
+            modal.classList.remove('closing-modal');
+            modalBackground.classList.add('hidden');
+        }, 500)
+    });
 });
