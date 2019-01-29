@@ -676,4 +676,21 @@ window.addEventListener('DOMContentLoaded', () => {
             [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         ];
     })
+
+    const modalBackground = document.querySelector('.modal-background');
+    const modal = document.querySelector('.modal');
+    const instructions = document.querySelector('.instructions-button');
+
+    instructions.addEventListener('click', () => {
+        if (modalBackground.classList.contains('hidden')) {
+            modalBackground.classList.remove('hidden');
+
+            modalBackground.addEventListener('click', () => {
+                modalBackground.classList.add('closing-background');
+                modal.classList.add('closing-modal');
+            });
+        }
+    });
+
+
 });
