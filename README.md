@@ -32,7 +32,7 @@ By clicking on the individual squares, users trigger the drum samples associated
 
 Below is an example of how I used JavaScript to turn the squares on the screen into functional elements. I used a tiny bit of JQuery in order to associate a `Pad` object and all of the related methods to the DOM element, making it easier in the long run to call methods and set parameters. An EventListener was then attached to the pad in order to enqueue the sample for playback, change attribute values, and actually play the sample on click.
 
-```
+```js
 switch (pad.getAttribute('padType')) {
             case 'hihat':
                 let $hhPad = $(`ul[id="hh"] > li[number="${pad.getAttribute('number')}"]`);
