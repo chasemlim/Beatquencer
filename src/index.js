@@ -695,6 +695,6 @@ window.addEventListener('DOMContentLoaded', () => {
             modalBackground.classList.remove('closing-background');
             modal.classList.remove('closing-modal');
             modalBackground.classList.add('hidden');
-        }, 500)
+        }, 480)
     });
 });

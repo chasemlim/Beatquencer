@@ -20,21 +20,21 @@
 
 @-webkit-keyframes slideInModal {
   from {left: -20vw; } 
-  to {left: 6vw; }
+  to {left: 0; }
 }
 
 @keyframes slideInModal {
   from {left: -20vw; } 
-  to {left: 6vw; }
+  to {left: 0; }
 }
 
 @-webkit-keyframes slideOutModal {
-  from {left: 6vw; } 
+  from {left: 0; } 
   to {left: -30vw; }
 }
 
 @keyframes slideOutModal {
-  from {left: 6vw; } 
+  from {left: 0; } 
   to {left: -30vw; }
 }
 
@@ -584,11 +584,11 @@ input[type=range]::-ms-fill-upper {
 
 .modal {
     width: 30vh;
-    height: 45vh;
+    height: 46vh;
     padding: 25px;
-    top: 17%;
-    left: 6vw;
-    position: absolute;
+    top: 16vh;
+    left: 0;
+    // position: absolute;
     // margin: -200px 30px 0 0;
     background-color: #FEFFFE;
     -webkit-animation-name: slideInModal;
@@ -596,6 +596,11 @@ input[type=range]::-ms-fill-upper {
     animation-name: slideInModal;
     animation-duration: 0.5s;
     z-index: 10;
+
+    display: flex;
+    align-items: center;
+    margin: auto;
+    position: relative;
 }
 
 .hidden {
@@ -610,9 +615,9 @@ input[type=range]::-ms-fill-upper {
 }
 
 .closing-background {
-    -webkit-animation-name: fadeOut;
+    -webkit-animation-name: fadeOutModal;
     -webkit-animation-duration: 0.5s;
-    animation-name: fadeOut;
+    animation-name: fadeOutModal;
     animation-duration: 0.5s;
 }
 
