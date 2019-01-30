@@ -588,20 +588,16 @@ input[type=range]::-ms-fill-upper {
     padding: 25px;
     top: 16.75vh;
     left: 0;
-    // position: absolute;
-    // margin: -200px 30px 0 0;
     background-color: #FEFFFE;
     -webkit-animation-name: slideInModal;
     -webkit-animation-duration: 0.5s;
     animation-name: slideInModal;
     animation-duration: 0.5s;
-    // z-index: 10;
 
     display: flex;
     align-items: center;
     margin: auto;
     position: relative;
-    // padding: 30% 2em;
     box-sizing: border-box;
 
     $border: 5px;
