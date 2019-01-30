@@ -648,7 +648,7 @@ input[type=range]::-ms-fill-upper {
     }
 
     .dismiss-text {
-        margin: 80px auto 0 auto;
+        margin: 50px auto 0 auto;
         width: 240px;
         height: 30px;
         text-align: center;
@@ -663,6 +663,17 @@ input[type=range]::-ms-fill-upper {
             background: white;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+    }
+
+    .cta {
+        width: 600px;
+        margin: 40px auto 0 auto;
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            color: #52d4ff;
         }
     }
 
@@ -689,82 +700,3 @@ input[type=range]::-ms-fill-upper {
     animation-name: fadeOutModal;
     animation-duration: 0.5s;
 }
-
-// .instructions-modal .modal-body {
-//     position: fixed;
-//     margin: auto;
-//     width: 320px;
-//     height: 100%;
-//     -webkit-transform: translate3d(0%, 0, 0);
-//     -ms-transform: translate3d(0%, 0, 0);
-//     -o-transform: translate3d(0%, 0, 0);
-//     transform: translate3d(0%, 0, 0);
-// }
-
-// .instructions-modal .modal-content {
-//     height: 100%;
-//     overflow-y: auto;
-// }
-
-// .modal-instructions {
-//     padding: 15px 15px 80px;
-// }
-
-// .instructions-modal.fade .modal-dialog {
-//     left: -320px;
-//     -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
-//     -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
-//     -o-transition: opacity 0.3s linear, left 0.3s ease-out;
-//     transition: opacity 0.3s linear, left 0.3s ease-out;
-// }
-
-// .instructions-modal.fade.in .modal-dialog {
-//     left: 0;
-// }
-
-// .modal-content {
-//     border-radius: 0;
-//     border: none;
-// }
-
-// .modal-header {
-//     border-bottom-color: #EEEEEE;
-//     background-color: #FAFAFA;
-// }
-
-
-// 	.modal.left .modal-dialog,
-// 	.modal.right .modal-dialog {
-// 		position: fixed;
-// 		margin: auto;
-// 		width: 320px;
-// 		height: 100%;
-// 		-webkit-transform: translate3d(0%, 0, 0);
-// 		    -ms-transform: translate3d(0%, 0, 0);
-// 		     -o-transform: translate3d(0%, 0, 0);
-// 		        transform: translate3d(0%, 0, 0);
-// 	}
-
-// 	.modal.left .modal-content,
-// 	.modal.right .modal-content {
-// 		height: 100%;
-// 		overflow-y: auto;
-// 	}
-	
-// 	.modal.left .modal-body,
-// 	.modal.right .modal-body {
-// 		padding: 15px 15px 80px;
-// 	}
-
-// /*Left*/
-// 	.modal.left.fade .modal-dialog{
-// 		left: -320px;
-// 		-webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
-// 		   -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
-// 		     -o-transition: opacity 0.3s linear, left 0.3s ease-out;
-// 		        transition: opacity 0.3s linear, left 0.3s ease-out;
-// 	}
-	
-// 	.modal.left.fade.in .modal-dialog{
-// 		left: 0;
-// 	}
