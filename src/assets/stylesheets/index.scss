@@ -681,6 +681,15 @@ input[type=range]::-ms-fill-upper {
         margin: 10px auto;
         width: 250px;
     }
+
+    .sign {
+        color: #ffec60;
+        float: right;
+        position: relative;
+        font-size: 14px;
+        right: -15px;
+        bottom: 11px;
+    }
 }
 
 .hidden {
