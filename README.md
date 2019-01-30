@@ -12,7 +12,7 @@ As a musician and music producer, I sought to combine two of my greatest passion
 
 Sampling has been a huge contributor to modern music culture, especially in genres such as Hip-Hop & Electronic, diversifying the ways producers approached creating music.
 
-Beatquencer will provide the user with a scaled down experience of what it is like to sample, using various drum samples and loops to create an original looping beat. Users can click on square pads arranged in a grid to trigger various samples at different times, and they can hear the product of their actions by clicking play and watching the grid light up.
+Beatquencer provides the user with a scaled down experience of what it is like to sample, using various drum samples and loops to create an original looping beat. Users can click on square pads arranged in a grid to trigger various samples at different times, and they can hear the product of their actions by clicking play and watching the grid light up.
 
 ## Technologies Used
 
