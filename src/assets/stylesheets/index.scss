@@ -595,10 +595,12 @@ input[type=range]::-ms-fill-upper {
     animation-duration: 0.5s;
 
     display: flex;
-    align-items: center;
+    // align-items: center;
+    // justify-content: center;
     margin: auto;
     position: relative;
     box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
 
     $border: 5px;
     color: #fff;
@@ -618,6 +620,50 @@ input[type=range]::-ms-fill-upper {
         margin: -$border;
         border-radius: inherit;
         background: linear-gradient(to right, #fe1818, #05abe0);
+    }
+
+    h4 {
+        font-size: 28px;
+        margin: 0 auto 15px auto;
+        width: 200px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .instruct1 {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .instruct2 {
+        margin-top: 30px;
+    }
+
+    .dismiss-text {
+        margin: 80px auto 0 auto;
+        width: 240px;
+        height: 30px;
+        text-align: center;
+        font-weight: 600;
+
+        background: -webkit-linear-gradient(45deg, #f1da36, #2aff00, #05abe0, #fe1818);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        &:hover {
+            cursor: pointer;
+            background: white;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    .colors {
+        margin: 10px auto;
+        width: 250px;
     }
 }
 
