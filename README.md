@@ -22,13 +22,40 @@ Beatquencer will provide the user with a scaled down experience of what it is li
 - CSS3/Sass
 - Webpack
 
-## Features
+## Features & Implementation
 
 ### Beat Pad
 
 ![PadAnimation](https://i.imgur.com/EMZrDf0.gif)
 
 By clicking on the individual squares, users trigger the drum samples associated with that square, and queue them up for playback.
+
+Below is an example of how I used JavaScript to turn the squares on the screen into functional elements. I used a tiny bit of JQuery in order to associate a `Pad` object and all of the related methods to the DOM element, making it easier in the long run to call methods and set parameters. An EventListener was then attached to the pad in order to enqueue the sample for playback, change attribute values, and actually play the sample on click.
+
+```
+switch (pad.getAttribute('padType')) {
+            case 'hihat':
+                let $hhPad = $(`ul[id="hh"] > li[number="${pad.getAttribute('number')}"]`);
+                $hhPad.data('pad', hihatPad);
+
+                let hhList = document.querySelector('#hh');
+                let hhPad = hhList.querySelector(`[number="${pad.getAttribute('number')}"]`);
+                
+                hhPad.setAttribute('data-active', 'off');
+
+                hhPad.addEventListener('click', () => {
+                    if (hhPad.getAttribute('data-active') === 'off') {
+                        hhPad.setAttribute('data-active', 'on');
+                        playLoop[0][parseInt(pad.getAttribute('number')) - 1] = 1;
+
+                        $hhPad.data("pad").play();
+                    } else {
+                        hhPad.setAttribute('data-active', 'off');                   
+                        playLoop[0][parseInt(pad.getAttribute('number')) - 1] = 0;
+                    }
+                })
+                break;
+```
 
 ### Tempo Gauge
 
